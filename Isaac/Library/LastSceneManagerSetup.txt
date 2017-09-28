@@ -1,0 +1,4 @@
+sceneSetups:
+- path: C:/Users/13125/Desktop/AI/Assets/Scene.unity
+  isLoaded: 1
+  isActive: 1
