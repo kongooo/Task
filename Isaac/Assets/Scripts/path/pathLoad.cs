@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class pathLoad : MonoBehaviour {
 
-    public GRID Grid;
+    private GRID Grid;
 
-    void Start()
+    void Awake()
     {
         Grid = GetComponent<GRID>();
     }
-
-
+    
     void Update()
     {
         changepath(Grid.StartTransform.position, Grid.EndTransform.position);

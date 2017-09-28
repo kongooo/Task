@@ -1,9 +1,17 @@
 fileFormatVersion: 2
 guid: 649e001e9095be345a5e6f9b5ba7fe6c
-timeCreated: 1506509734
+timeCreated: 1506611915
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: 1428_0
+    21300002: 1428_1
+    21300004: 1428_2
+    21300006: 1428_3
+    21300008: 1428_4
+    21300010: 1428_5
+    21300012: 1428_6
+    21300014: 1428_7
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -73,7 +81,119 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 1428_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 115
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1428_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 115
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1428_2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 115
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1428_3
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 67
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1428_4
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 67
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1428_5
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 18
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1428_6
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 18
+        width: 46
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1428_7
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 18
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

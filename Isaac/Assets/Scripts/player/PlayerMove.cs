@@ -27,8 +27,6 @@ public class PlayerMove : MonoBehaviour
 	    y = Input.GetAxis("Vertical");
 	    
 	    animator_body.SetFloat("LR", x);
-        if(y!=0)
-	    animator_body.SetTrigger("front");
         animator_head.SetFloat("leftRight",x);
         animator_head.SetFloat("backFront",-y);
 	    
@@ -37,6 +35,10 @@ public class PlayerMove : MonoBehaviour
 	        animator_body.SetTrigger("stop");
             animator_head.SetTrigger("stop");
 	    }
+        else if(y!=0)
+        {
+            animator_body.SetTrigger("front");
+        }
         
         rigidbody2D.MovePosition(Vector2.Lerp(currentPos, currentPos + new Vector3(x, y,0), speed * Time.deltaTime) );
 	}

@@ -53,7 +53,7 @@ public class BasePlayer : MonoBehaviour
         }
     }
 
-    private void setTransparency(GameObject go,float change)
+    public void setTransparency(GameObject go,float change)
     {
         Color color1 = go.GetComponent<SpriteRenderer>().color;
         color1.a = change;

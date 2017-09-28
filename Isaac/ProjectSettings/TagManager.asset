@@ -7,6 +7,7 @@ TagManager:
   - room
   - player
   - OB
+  - body
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - WallLayer
   - 
   - 
   - 

@@ -54,8 +54,10 @@
      <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
      <Compile Include="Assets\Scripts\bullet\BulletControl.cs" />
+     <Compile Include="Assets\Scripts\bullet\RedBullet.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyBase.cs" />
      <Compile Include="Assets\Scripts\Enemy\FireEnemy.cs" />
+     <Compile Include="Assets\Scripts\Enemy\LegEnemy.cs" />
      <Compile Include="Assets\Scripts\path\GRID.cs" />
      <Compile Include="Assets\Scripts\path\pathLoad.cs" />
      <Compile Include="Assets\Scripts\player\BasePlayer.cs" />
@@ -87,16 +89,16 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>C:/Users/13125/Documents/Unity/Isaac/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ <HintPath>C:/Users/13125/Desktop/Task/Isaac/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="DOTween43">
- <HintPath>C:/Users/13125/Documents/Unity/Isaac/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ <HintPath>C:/Users/13125/Desktop/Task/Isaac/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
  </Reference>
  <Reference Include="DOTween46">
- <HintPath>C:/Users/13125/Documents/Unity/Isaac/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+ <HintPath>C:/Users/13125/Desktop/Task/Isaac/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
  </Reference>
  <Reference Include="DOTween50">
- <HintPath>C:/Users/13125/Documents/Unity/Isaac/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+ <HintPath>C:/Users/13125/Desktop/Task/Isaac/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

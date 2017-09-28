@@ -5,11 +5,6 @@ using UnityEngine;
 public class BulletControl : MonoBehaviour
 {
    
-	void Start ()
-	{
-	    
-	}
-	
 	
 	void Update ()
 	{
@@ -18,9 +13,7 @@ public class BulletControl : MonoBehaviour
 	    if (Vector3.Distance(playPos, transform.position) > 8)
 	    {
 	        destroyme();
-        }
-            
-        
+        }       
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -34,8 +27,7 @@ public class BulletControl : MonoBehaviour
     public void destroyme()
     {
         GetComponent<Animator>().SetTrigger("break");
-        GetComponent<Rigidbody2D>().velocity*=0.3f;
-        
+        GetComponent<Rigidbody2D>().velocity*=0.3f;       
         Invoke("destroyafter",0.5f);
     }
 

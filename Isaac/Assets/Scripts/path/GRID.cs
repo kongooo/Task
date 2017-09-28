@@ -8,10 +8,12 @@ public class GRID : MonoBehaviour {
     public GameObject enemy;
     public Transform StartTransform;
     public Transform EndTransform;
+    public LayerMask floorLayer;
+    public float speed;
 
-    public float NodeRadius = 0.3f;        //节点半径
+    private float NodeRadius=0.4f;        //节点半径
 
-    //public LayerMask WallLayer;      //过滤墙体所在的层
+    
 
     public class NodeItem              //节点类 储存每一个节点的信息
     {
@@ -52,23 +54,24 @@ public class GRID : MonoBehaviour {
 
         Path = new GameObject("PathRange");
 
-        for (int x = 0; x < w; x++)
-            for (int y = 0; y < h; y++)
-            {
-                Vector3 pos = new Vector3(x, y, 0);
-                bool isWall = false;
-                Collider2D collider = Physics2D.OverlapCircle(pos, NodeRadius);
-                if (collider != null)
-                {
-                    isWall = true;
-                    Debug.Log("wall!");
-                }
-                    
-
-                Grid[x, y] = new NodeItem(isWall, x, y, pos);      //构建节点
-
-            }
     }
+
+    void Update()
+    {
+        for (int x = 0; x < w; x++)
+        for (int y = 0; y < h; y++)
+        {
+            Vector3 pos = new Vector3(x, y, 0);
+            bool isWall = false;
+            Collider2D collider = Physics2D.OverlapCircle(pos, NodeRadius, floorLayer);
+            if (collider != null)
+            {
+                isWall = true;
+            }
+            Grid[x, y] = new NodeItem(isWall, x, y, pos);      //构建节点
+        }
+    }
+
     //根据坐标位置获得对应的节点
     public NodeItem GetGrid(Vector3 position)
     {
@@ -95,7 +98,7 @@ public class GRID : MonoBehaviour {
                 {
                     int x = node.x + i;
                     int y = node.y + j;
-                    if (x > 1 && x < w && y > 1 && y < h) //不超过边界则放到集合中
+                    if (x > -1 && x < w && y > -1 && y < h) //不超过边界则放到集合中
                     {
                         NearList.Add(Grid[x, y]);
                     }
@@ -123,14 +126,12 @@ public class GRID : MonoBehaviour {
                 GameObject obj = GameObject.Instantiate(node, path[i].pos, Quaternion.identity) as GameObject;
                 obj.transform.SetParent(Path.transform);
                 PathObject.Add(obj);
-
             }
         }
         //把不需要的路标setfalse
         for (int i = path.Count; i < PathObject.Count; i++)
         {
             PathObject[i].SetActive(false);
-
         }
         chase(enemy, PathObject, path.Count);
     }
@@ -146,8 +147,7 @@ public class GRID : MonoBehaviour {
         Vector3 AIpos = AI.GetComponent<Transform>().position;
         if (AIpos != pathpos[currentpoint])
         {
-            Vector2 p = Vector2.MoveTowards(AIpos, pathpos[currentpoint], 0.1f);
-            AI.GetComponent<Rigidbody2D>().MovePosition(p);
+            AI.GetComponent<Rigidbody2D>().MovePosition(Vector2.Lerp(AIpos, pathpos[currentpoint],speed*Time.deltaTime));
         }
         else
             currentpoint = (currentpoint + 1) % pathpos.Length;
@@ -155,7 +155,7 @@ public class GRID : MonoBehaviour {
         //动画判断
         Vector3 dir = pathpos[currentpoint] - AIpos;
 
-        AI.GetComponent<Animator>().SetFloat("lf", dir.x);//不存在？？
+        AI.GetComponent<Animator>().SetFloat("lf", dir.x);
 
         AI.GetComponent<Animator>().SetFloat("ud", dir.y);
     }
