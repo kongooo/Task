@@ -16,6 +16,7 @@ public class BasePlayer : MonoBehaviour
 
 	void Awake ()
 	{
+        transform.position=new Vector3(10,1,-0.2f);
 	    _instance = this;
         setTransparency(soul,0);
 	    setTransparency(deathBody,0);

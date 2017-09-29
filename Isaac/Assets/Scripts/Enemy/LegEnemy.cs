@@ -28,7 +28,7 @@ public class LegEnemy : MonoBehaviour
             j = 0;
             x = Random.Range(-2, 2);
             y = Random.Range(-2, 2);
-            RaycastHit2D[] ray = Physics2D.RaycastAll(transform.position, new Vector2(x, y), 1, ObjectLayer);
+            RaycastHit[] ray = Physics.RaycastAll(transform.position, new Vector2(x, y), 1, ObjectLayer);
             if (ray.Length > 0)
             {
                 for (int i = 0; i < ray.Length; i++)
@@ -38,11 +38,11 @@ public class LegEnemy : MonoBehaviour
                 x = -x;
                 y = -y;
             }
-            animator.SetFloat("LR", x);
+            animator.SetFloat("lf", x);
             GameObject.Instantiate(Redbullet, transform.position, Quaternion.identity).GetComponent<RedBullet>().RedMove();           
         }
 	    j += Time.deltaTime;
-	    GetComponent<Rigidbody2D>().MovePosition(Vector2.Lerp(transform.position,
+	    GetComponent<Rigidbody>().MovePosition(Vector2.Lerp(transform.position,
 	        transform.position + new Vector3(x, y, 0), speed * Time.deltaTime));
 	}
 

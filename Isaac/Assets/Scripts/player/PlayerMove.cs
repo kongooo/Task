@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     private float x, y;
     private Animator animator_body;
     private Animator animator_head;
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody rigidbody;
     public float speed;
     public GameObject body;
     public GameObject head;
@@ -16,17 +16,17 @@ public class PlayerMove : MonoBehaviour
 	{
 	    animator_body = body.GetComponent<Animator>();
 	    animator_head = head.GetComponent<Animator>();
-	    rigidbody2D = GetComponent<Rigidbody2D>();
+	    rigidbody = GetComponent<Rigidbody>();
 	}
 	
 	
-	void Update ()
+	void FixedUpdate ()
 	{
 	    Vector3 currentPos=transform.position;
 	    x = Input.GetAxis("Horizontal");
 	    y = Input.GetAxis("Vertical");
 	    
-	    animator_body.SetFloat("LR", x);
+	    animator_body.SetFloat("lf", x);
         animator_head.SetFloat("leftRight",x);
         animator_head.SetFloat("backFront",-y);
 	    
@@ -37,9 +37,9 @@ public class PlayerMove : MonoBehaviour
 	    }
         else if(y!=0)
         {
-            animator_body.SetTrigger("front");
+            animator_body.SetTrigger("ud");
         }
         
-        rigidbody2D.MovePosition(Vector2.Lerp(currentPos, currentPos + new Vector3(x, y,0), speed * Time.deltaTime) );
+        rigidbody.MovePosition(Vector2.Lerp(currentPos, currentPos + new Vector3(x, y,0), speed * Time.deltaTime) );
 	}
 }

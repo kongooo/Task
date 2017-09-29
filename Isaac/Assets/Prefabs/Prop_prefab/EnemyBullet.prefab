@@ -21,8 +21,10 @@ GameObject:
   - component: {fileID: 4226084029848664}
   - component: {fileID: 212328436892840140}
   - component: {fileID: 95444945385867750}
-  - component: {fileID: 50709291364631462}
   - component: {fileID: 114788858996270944}
+  - component: {fileID: 135164715192384236}
+  - component: {fileID: 54696853161101068}
+  - component: {fileID: 136021419656939622}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: Untagged
@@ -37,32 +39,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400407526252796}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.32, y: 1.81, z: 0}
+  m_LocalPosition: {x: 3.46, y: 0.38, z: 0}
   m_LocalScale: {x: 1.291957, y: 1.3654094, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50709291364631462
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &54696853161101068
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400407526252796}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 112
   m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!95 &95444945385867750
 Animator:
   serializedVersion: 3
@@ -91,7 +88,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc4ac8a9d1e2b0445ae326dfe9bfa3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  legTrans: {fileID: 0}
+--- !u!135 &135164715192384236
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1400407526252796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.13
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136021419656939622
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1400407526252796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.13
+  m_Height: 0.24999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212328436892840140
 SpriteRenderer:
   m_ObjectHideFlags: 1

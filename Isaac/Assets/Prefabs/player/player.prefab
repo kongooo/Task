@@ -85,11 +85,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4983732269606006}
-  - component: {fileID: 50949392226104982}
   - component: {fileID: 114351476651277524}
   - component: {fileID: 114663317414017494}
   - component: {fileID: 114222858507415302}
-  - component: {fileID: 70068917548140886}
+  - component: {fileID: 54738901218025824}
+  - component: {fileID: 136430120787002138}
   m_Layer: 0
   m_Name: player
   m_TagString: player
@@ -216,7 +216,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1366857120561906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.9, y: 2.98, z: 0}
+  m_LocalPosition: {x: 10.16, y: 1.64, z: -0.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4506508032671456}
@@ -246,41 +246,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!50 &50949392226104982
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &54738901218025824
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1366857120561906}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 120
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!70 &70068917548140886
-CapsuleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1366857120561906}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.006689787, y: -0.21235323}
-  m_Size: {x: 0.7421088, y: 1.0336418}
-  m_Direction: 0
 --- !u!95 &95163822349062322
 Animator:
   serializedVersion: 3
@@ -380,6 +360,19 @@ MonoBehaviour:
   left: {fileID: 4410201811079812}
   right: {fileID: 4161103360494314}
   teer: {fileID: 1292245850996218, guid: fd7c17e2362da8c45bc19afa12feffd2, type: 2}
+--- !u!136 &136430120787002138
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366857120561906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3758058
+  m_Height: 0.7516116
+  m_Direction: 1
+  m_Center: {x: 0.030000001, y: -0.46, z: -0.016053379}
 --- !u!212 &212151313070698240
 SpriteRenderer:
   m_ObjectHideFlags: 1

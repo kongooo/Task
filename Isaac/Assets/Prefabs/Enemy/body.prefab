@@ -41,10 +41,9 @@ GameObject:
   - component: {fileID: 50456870203825114}
   - component: {fileID: 58366256007504492}
   - component: {fileID: 114494262069838840}
-  - component: {fileID: 114435145211527552}
   m_Layer: 0
   m_Name: body
-  m_TagString: player
+  m_TagString: body
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166652441730062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.36, y: 1.53, z: 0}
+  m_LocalPosition: {x: 4.27, y: 2.15, z: 0}
   m_LocalScale: {x: 4.017612, y: 3.7813737, z: 1}
   m_Children:
   - {fileID: 4758210194779256}
@@ -70,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1090223948354988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0019999899, y: 0.061, z: 0}
+  m_LocalPosition: {x: 0, y: 0.043, z: 0}
   m_LocalScale: {x: 0.24640656, y: 0.2490411, z: 1}
   m_Children: []
   m_Father: {fileID: 4309122594944264}
@@ -145,22 +144,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114435145211527552
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1166652441730062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bffe7cf605d284fa9da8a2a6b233d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  ObjectLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  Redbullet: {fileID: 1166652441730062}
 --- !u!114 &114494262069838840
 MonoBehaviour:
   m_ObjectHideFlags: 1

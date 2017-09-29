@@ -63,8 +63,8 @@ public class GRID : MonoBehaviour {
         {
             Vector3 pos = new Vector3(x, y, 0);
             bool isWall = false;
-            Collider2D collider = Physics2D.OverlapCircle(pos, NodeRadius, floorLayer);
-            if (collider != null)
+            bool isco = Physics.CheckSphere(pos, 0.3f, floorLayer);
+            if (isco)
             {
                 isWall = true;
             }
@@ -147,16 +147,20 @@ public class GRID : MonoBehaviour {
         Vector3 AIpos = AI.GetComponent<Transform>().position;
         if (AIpos != pathpos[currentpoint])
         {
-            AI.GetComponent<Rigidbody2D>().MovePosition(Vector2.Lerp(AIpos, pathpos[currentpoint],speed*Time.deltaTime));
+            AI.GetComponent<Rigidbody>().MovePosition(Vector2.Lerp(AIpos, pathpos[currentpoint],speed*Time.deltaTime));
         }
         else
             currentpoint = (currentpoint + 1) % pathpos.Length;
 
-        //动画判断
-        Vector3 dir = pathpos[currentpoint] - AIpos;
+        if (gameObject.tag!="fly")
+        {
+            //动画判断
+            Vector3 dir = pathpos[currentpoint] - AIpos;
 
-        AI.GetComponent<Animator>().SetFloat("lf", dir.x);
+            AI.GetComponent<Animator>().SetFloat("lf", dir.x);
 
-        AI.GetComponent<Animator>().SetFloat("ud", dir.y);
+            AI.GetComponent<Animator>().SetFloat("ud", dir.y);
+        }
+        
     }
 }
