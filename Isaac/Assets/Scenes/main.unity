@@ -1043,7 +1043,7 @@ Prefab:
     - target: {fileID: 54521524249381080, guid: ec8fa3f2ce2a8544ab55627755dfc29e,
         type: 2}
       propertyPath: m_Constraints
-      value: 112
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 136571995893676476, guid: ec8fa3f2ce2a8544ab55627755dfc29e, type: 2}
@@ -1144,8 +1144,8 @@ GameObject:
   m_PrefabParentObject: {fileID: 1942792015391072, guid: ec8fa3f2ce2a8544ab55627755dfc29e,
     type: 2}
   m_PrefabInternal: {fileID: 1843688790}
---- !u!65 &1941062040
-BoxCollider:
+--- !u!136 &1941062040
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1153,6 +1153,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6357656, y: 0.45569474, z: 0.043320745}
-  m_Center: {x: -0.0030207224, y: -0.032152627, z: -0.0155130625}
+  m_Radius: 0.22839205
+  m_Height: 0.71316063
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: -0.44949555}
