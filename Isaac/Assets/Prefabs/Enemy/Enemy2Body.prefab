@@ -26,9 +26,10 @@ GameObject:
   - component: {fileID: 114227737648605434}
   - component: {fileID: 54876729488911672}
   - component: {fileID: 136055402638134760}
+  - component: {fileID: 114855640541527666}
   m_Layer: 0
   m_Name: Enemy2Body
-  m_TagString: enemy2
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,6 +152,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttet: {fileID: 1119158157270042, guid: bd0566b11daee574ab50714418cf5e63, type: 2}
   player: {fileID: 0}
+--- !u!114 &114855640541527666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1045565738712728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28a374d0182f4943871a5e2074aadcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136055402638134760
 CapsuleCollider:
   m_ObjectHideFlags: 1

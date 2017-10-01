@@ -11,6 +11,9 @@ TagManager:
   - fly
   - enemy2
   - magic
+  - Boss
+  - up
+  - Enemy
   layers:
   - Default
   - TransparentFX

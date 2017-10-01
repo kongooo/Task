@@ -1,21 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class BulletControl : MonoBehaviour
 {
-    void Update()
-    {
-        Debug.Log(transform.position);
-    }
+
+    public int damage;
+
+    
     private void OnTriggerEnter(Collider other)
     {
         string Tag;
         Tag = other.tag;
-        if (Tag == "room"||Tag=="OB"||Tag=="magic")
+        if (Tag == "room"||Tag=="OB"||Tag=="magic"||Tag=="Enemy")
             destroyme();
+        switch (Tag)
+        {
+            case "Enemy":            
+            other.GetComponent<EnemyBase>().EnemyDamage(damage);
+            break;
+                    
+        }
     }
 
+   
     public void destroyme()
     {
         GetComponent<Animator>().SetTrigger("break");

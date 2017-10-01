@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114749649818890284}
   - component: {fileID: 95881463422089274}
   - component: {fileID: 54580501043873566}
-  - component: {fileID: 135873376929472694}
+  - component: {fileID: 136502885927928326}
   m_Layer: 0
   m_Name: teer
   m_TagString: Untagged
@@ -87,8 +87,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd16578b1dd34124db967ea5c20d43cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &135873376929472694
-SphereCollider:
+  damage: 1
+--- !u!136 &136502885927928326
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -96,9 +97,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.13
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Height: 0.9965185
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.22656459}
 --- !u!212 &212761108281649640
 SpriteRenderer:
   m_ObjectHideFlags: 1

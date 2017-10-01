@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54860405485444546}
   - component: {fileID: 95475301063889442}
   - component: {fileID: 135177464650959796}
+  - component: {fileID: 114786029546120412}
   m_Layer: 0
   m_Name: Enemy2Bullet
   m_TagString: Untagged
@@ -88,6 +89,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!114 &114786029546120412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119158157270042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b19a0fed045cdd4888aec5d5008e940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 1
 --- !u!135 &135177464650959796
 SphereCollider:
   m_ObjectHideFlags: 1

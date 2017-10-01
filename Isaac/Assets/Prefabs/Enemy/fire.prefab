@@ -25,9 +25,10 @@ GameObject:
   - component: {fileID: 114811663937990158}
   - component: {fileID: 54457320944910670}
   - component: {fileID: 135789758732682264}
+  - component: {fileID: 114116400605288362}
   m_Layer: 0
   m_Name: fire
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +78,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114116400605288362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1989538051302136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28a374d0182f4943871a5e2074aadcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114522413752992518
 MonoBehaviour:
   m_ObjectHideFlags: 1

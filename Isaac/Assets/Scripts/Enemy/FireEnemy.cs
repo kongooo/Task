@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireEnemy : EnemyBase
+public class FireEnemy : MonoBehaviour
 {
     private float firespeed;
 
@@ -16,23 +16,5 @@ public class FireEnemy : EnemyBase
 		
 	}
 
-    public override void Attack()
-    {
-        
-    }
-
-    public override void Death()
-    {
-         
-    }
-
-    public override void Move()
-    {
-       
-    }
-
-    public override void Damage()
-    {
-        
-    }
+    
 }

@@ -25,9 +25,10 @@ GameObject:
   - component: {fileID: 114055093188950334}
   - component: {fileID: 54820899153995632}
   - component: {fileID: 135871006904643816}
+  - component: {fileID: 114789423583797830}
   m_Layer: 0
   m_Name: fly
-  m_TagString: fly
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +108,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   speed: 1
+--- !u!114 &114789423583797830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713358769325540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28a374d0182f4943871a5e2074aadcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135871006904643816
 SphereCollider:
   m_ObjectHideFlags: 1

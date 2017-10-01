@@ -6,6 +6,7 @@ using DG.Tweening;
 public class BasePlayer : MonoBehaviour
 {
     private static BasePlayer _instance;
+    private int change = 5;
     public static BasePlayer Instance { get { return _instance; } }
 
     public int HP;
@@ -13,24 +14,33 @@ public class BasePlayer : MonoBehaviour
     private const int maxhp = 6;
 
     private bool isdeath=false;
-
+    private Renderer renderer1,renderer2;
 	void Awake ()
 	{
         transform.position=new Vector3(10,1,-0.2f);
 	    _instance = this;
         setTransparency(soul,0);
 	    setTransparency(deathBody,0);
+	    renderer1 = head.GetComponent<Renderer>();
+	    renderer2 = body.GetComponent<Renderer>();
 	}
 
     void Update()
     {
+        renderer1.material.color = Color.Lerp(renderer1.material.color, Color.white, Time.deltaTime * change);
+        renderer2.material.color = Color.Lerp(renderer2.material.color, Color.white, Time.deltaTime * change);
         SetDeath();
     }
 
     public void SufferDamage(int reduce)
     {
-        if(HP>0)
-        HP -= reduce;
+        if (HP > 0)
+        {
+            HP -= reduce;
+            renderer1.material.color=Color.red;
+            renderer2.material.color = Color.red; 
+        }
+        
     }
 
     public void AddHP(int hp)

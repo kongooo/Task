@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 114975641656445562}
   - component: {fileID: 54238233600917390}
   - component: {fileID: 135200361336246416}
+  - component: {fileID: 114541757779431714}
+  - component: {fileID: 114201132244559572}
   m_Layer: 0
   m_Name: bussBullet
   m_TagString: Untagged
@@ -76,6 +78,29 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114201132244559572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1382999873807824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b19a0fed045cdd4888aec5d5008e940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 1
+--- !u!114 &114541757779431714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1382999873807824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7541c057075e89499a5627389336586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114975641656445562
 MonoBehaviour:
   m_ObjectHideFlags: 1

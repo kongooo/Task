@@ -44,7 +44,8 @@ public class PlayerAttack : MonoBehaviour
         if (restTime > 1 / fireRate)
         {           
             GameObject Teer = GameObject.Instantiate(teer, bulletTrans.position, Quaternion.identity);          
-            Teer.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;           
+            Teer.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;   
+            if(direction.x!=0)
             Teer.GetComponent<Rigidbody>().velocity+=new Vector3(0,1,0.3f);           
             restTime = 0;
         }
