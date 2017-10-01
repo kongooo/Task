@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 4309122594944264}
   - component: {fileID: 212529817812587180}
   - component: {fileID: 95738577403952722}
-  - component: {fileID: 50456870203825114}
-  - component: {fileID: 58366256007504492}
   - component: {fileID: 114494262069838840}
+  - component: {fileID: 54561681208051492}
+  - component: {fileID: 135082124144073722}
   m_Layer: 0
   m_Name: body
   m_TagString: body
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166652441730062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.27, y: 2.15, z: 0}
+  m_LocalPosition: {x: 4.31, y: 2.6, z: -0.2}
   m_LocalScale: {x: 4.017612, y: 3.7813737, z: 1}
   m_Children:
   - {fileID: 4758210194779256}
@@ -75,41 +75,21 @@ Transform:
   m_Father: {fileID: 4309122594944264}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50456870203825114
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &54561681208051492
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166652441730062}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!58 &58366256007504492
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1166652441730062}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0024317128, y: -0.005167272}
   serializedVersion: 2
-  m_Radius: 0.053524088
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!95 &95326474205351262
 Animator:
   serializedVersion: 3
@@ -155,11 +135,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34bffe7cf605d284fa9da8a2a6b233d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 0.3
   ObjectLayer:
     serializedVersion: 2
     m_Bits: 256
   Redbullet: {fileID: 1400407526252796, guid: e976e3ecefe572d49ae7ecbce9cb4318, type: 2}
+--- !u!135 &135082124144073722
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166652441730062}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212529817812587180
 SpriteRenderer:
   m_ObjectHideFlags: 1

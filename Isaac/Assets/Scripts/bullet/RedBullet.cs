@@ -8,8 +8,8 @@ public class RedBullet : MonoBehaviour
     public void RedMove()
     {
         float x = Random.Range(-3, 3);
-        float y = Random.Range(1, 3);
-        GetComponent<Rigidbody>().velocity = new Vector3(x, y,0.1f*(3-y));
+        float y = Random.Range(2, 4);
+        GetComponent<Rigidbody>().velocity = new Vector3(x, y,0.1f*(4-y));
     }
 
     
@@ -18,10 +18,9 @@ public class RedBullet : MonoBehaviour
     {
         if (col.tag == "room" || col.tag == "magic")
         {
-            GetComponent<Animator>().SetTrigger("break");
-            
-            Debug.Log("wall");
-            Invoke("de",0.3f);
+            GetComponent<Animator>().SetTrigger("break");  
+            GetComponent<Rigidbody>().velocity=Vector3.zero;
+            Invoke("de",0.5f);
         }
             
     }

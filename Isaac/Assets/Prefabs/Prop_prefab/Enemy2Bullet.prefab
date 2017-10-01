@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 212220102944910284}
   - component: {fileID: 114218149966427710}
   - component: {fileID: 54860405485444546}
-  - component: {fileID: 136797359626720012}
+  - component: {fileID: 95475301063889442}
+  - component: {fileID: 135177464650959796}
   m_Layer: 0
   m_Name: Enemy2Bullet
   m_TagString: Untagged
@@ -58,6 +59,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &95475301063889442
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119158157270042}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6de0ba74d658ceb429fd05ca07361e4e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114218149966427710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,10 +88,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  enemy2Trans: {fileID: 4839585064910952, guid: 87fd5d7ef7d83db418615258db6aaa73,
-    type: 2}
---- !u!136 &136797359626720012
-CapsuleCollider:
+--- !u!135 &135177464650959796
+SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -81,9 +97,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.13
-  m_Height: 0.25
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212220102944910284
 SpriteRenderer:

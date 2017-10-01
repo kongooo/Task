@@ -6,20 +6,36 @@ public class BulletEnemy2 : MonoBehaviour
 {
 
     public float speed;
-    public Transform enemy2Trans;
+    
+    private Animator animator;
+    private Rigidbody rigidbody;
+    
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+        rigidbody = GetComponent<Rigidbody>();        
+    }
 
-	
+    
     public void BulletMove(Vector3 player)
     {
         Vector3 posDif = Vector3.Normalize(player - transform.position);
-        GetComponent<Rigidbody>().velocity = posDif*speed;
-        if(Vector3.Distance(enemy2Trans.position,transform.position)>6)
-            Destroy(gameObject);
+        GetComponent<Rigidbody>().velocity = posDif*speed;       
+        GetComponent<Rigidbody>().velocity+=new Vector3(0,0,0.3f);
     }
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.tag=="room"||col.tag=="player")
-            Destroy(gameObject);
+        if (col.tag == "room" || col.tag == "player" || col.tag == "magic")
+        {
+            animator.SetTrigger("break");    
+            GetComponent<Rigidbody>().velocity=Vector3.zero;
+            Invoke("destroyafter", 0.5f);
+        }           
+    }
+
+    private void destroyafter()
+    {
+        Destroy(gameObject);
     }
 }
