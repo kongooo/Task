@@ -6,13 +6,13 @@ public class Enemy2Attack : MonoBehaviour
 {
 
     public GameObject buttet;
-    public GameObject player;
+    private GameObject player;
     private Vector3 playerPos;
 
     private float j=0.5f;
 
-	void Start () {
-		
+	void Awake () {
+		player=GameObject.FindGameObjectWithTag("player");
 	}
 	
 	

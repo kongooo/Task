@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class BossMove : MonoBehaviour
 {
-    public Transform playerTrans;
+    private Transform playerTrans;
     public GameObject bullet;
 
     private Rigidbody rigidbody;
@@ -20,19 +20,17 @@ public class BossMove : MonoBehaviour
     private float seed,saw1=2;
     private float i=2;
 
-	void Start ()
+	void Awake ()
 	{
-	    dir = playerTrans.position - transform.position;
+	    playerTrans = GameObject.FindGameObjectWithTag("player").transform;
+        dir = playerTrans.position - transform.position;
         rigidbody = GetComponent<Rigidbody>();
 	    animator = GetComponent<Animator>();
-        
 	    StartCoroutine("move");
 	}
-	
-	
+		
 	void Update ()
-	{	    
-        
+	{	           
 	    if (i >= 2)
 	    {
 	        dir = playerTrans.position - transform.position;
@@ -41,8 +39,6 @@ public class BossMove : MonoBehaviour
 	    }
 	    i += Time.deltaTime;
 	}
-
-    
 
     IEnumerator move( )
     {       
@@ -101,9 +97,7 @@ public class BossMove : MonoBehaviour
             GameObject.Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<BossBullet>().BossBuMove(-9,-1,true);           
         }
         yield return new WaitForSeconds(0.5f);
-        animator.SetFloat("attack", 0);
-        
-        
+        animator.SetFloat("attack", 0);        
         StopCoroutine("Attack");
         StartCoroutine("attack");
     }
@@ -111,8 +105,7 @@ public class BossMove : MonoBehaviour
     IEnumerator attack()
     {
         animator.SetFloat("attack2", 1);
-        yield return new WaitForSeconds(0.7f);
-        
+        yield return new WaitForSeconds(0.7f);       
         rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
         rigidbody.velocity = new Vector3(0, 30, -30);
         animator.SetFloat("fly", 1);
@@ -124,9 +117,7 @@ public class BossMove : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         isfly = true;        
         yield return new WaitForSeconds(1.5f);
-        isfly = false;
-        
-        
+        isfly = false;        
         rigidbody.isKinematic = false;
         animator.SetFloat("attack2", 0);
         StopCoroutine("attack");

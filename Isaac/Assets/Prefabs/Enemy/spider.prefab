@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114070505675427174}
   - component: {fileID: 54457705230691340}
   - component: {fileID: 135477990716392412}
-  - component: {fileID: 114031008129501450}
+  - component: {fileID: 114185007122312872}
   m_Layer: 0
   m_Name: spider
   m_TagString: Enemy
@@ -78,17 +78,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114031008129501450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1624290767751060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28a374d0182f4943871a5e2074aadcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114070505675427174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,6 +89,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3052d0f7ec7ae46a7d06255c3fa42a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114185007122312872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1624290767751060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabd898c08045424f9c4a918ddc1610e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 5
+  playerDamage: 1
+  deathTime: 1
 --- !u!114 &114716162552847068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +128,7 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1624290767751060}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9ff5afd8a902d5f4f9a44587b8e03425, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

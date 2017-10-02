@@ -27,9 +27,13 @@ public class PlayerMove : MonoBehaviour
 	    y = Input.GetAxis("Vertical");
 	    
 	    animator_body.SetFloat("lf", x);
-        animator_head.SetFloat("leftRight",x);
-        animator_head.SetFloat("backFront",-y);
-	    
+	    if ((!Input.GetKey(KeyCode.LeftArrow)) && (!Input.GetKey(KeyCode.RightArrow)) &&
+	        (!Input.GetKey(KeyCode.UpArrow)) && (!Input.GetKey(KeyCode.DownArrow)))
+	    {
+	        animator_head.SetFloat("leftRight", x);
+	        animator_head.SetFloat("backFront", -y);
+        }
+       	    
         if (x == 0 && y == 0&&(!Input.GetKey(KeyCode.LeftArrow))&&(!Input.GetKey(KeyCode.RightArrow))&&(!Input.GetKey(KeyCode.UpArrow))&&(!Input.GetKey(KeyCode.DownArrow)))
 	    {
 	        animator_body.SetTrigger("stop");

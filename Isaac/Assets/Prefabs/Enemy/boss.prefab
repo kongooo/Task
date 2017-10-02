@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54521524249381080}
   - component: {fileID: 114978307971439178}
   - component: {fileID: 136233573082675228}
-  - component: {fileID: 114802869517239484}
+  - component: {fileID: 114294193706353874}
   m_Layer: 0
   m_Name: boss
   m_TagString: Enemy
@@ -77,7 +77,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114802869517239484
+--- !u!114 &114294193706353874
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -85,9 +85,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1942792015391072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb87fabd3254004da36d7cc89b26898, type: 3}
+  m_Script: {fileID: 11500000, guid: eabd898c08045424f9c4a918ddc1610e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hp: 10
+  playerDamage: 0
+  deathTime: 2
 --- !u!114 &114978307971439178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,7 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b97b1b536e00e45b2bf06ec127dde9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTrans: {fileID: 0}
   bullet: {fileID: 1382999873807824, guid: a23e76174075cd14a896745212980755, type: 2}
 --- !u!136 &136233573082675228
 CapsuleCollider:
@@ -107,7 +109,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1942792015391072}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9ff5afd8a902d5f4f9a44587b8e03425, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.23653859

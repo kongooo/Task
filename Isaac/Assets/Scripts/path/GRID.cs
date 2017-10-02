@@ -7,7 +7,7 @@ public class GRID : MonoBehaviour {
     public GameObject node;       //ai的路标
     public GameObject enemy;
     public Transform StartTransform;
-    public Transform EndTransform;
+    [HideInInspector] public Transform EndTransform;
     public LayerMask floorLayer;
     public float speed;
 
@@ -50,6 +50,7 @@ public class GRID : MonoBehaviour {
 
     void Awake()
     {
+        EndTransform = GameObject.FindGameObjectWithTag("player").transform;
         Grid = new NodeItem[w, h];                           //创建对应的节点二维数组
 
         Path = new GameObject("PathRange");

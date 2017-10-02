@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114811663937990158}
   - component: {fileID: 54457320944910670}
   - component: {fileID: 135789758732682264}
-  - component: {fileID: 114116400605288362}
+  - component: {fileID: 114041707491363916}
   m_Layer: 0
   m_Name: fire
   m_TagString: Enemy
@@ -78,7 +78,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114116400605288362
+--- !u!114 &114041707491363916
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,9 +86,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1989538051302136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28a374d0182f4943871a5e2074aadcb, type: 3}
+  m_Script: {fileID: 11500000, guid: eabd898c08045424f9c4a918ddc1610e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hp: 4
+  playerDamage: 1
+  deathTime: 1
 --- !u!114 &114522413752992518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -125,7 +128,7 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1989538051302136}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9ff5afd8a902d5f4f9a44587b8e03425, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

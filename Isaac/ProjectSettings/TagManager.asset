@@ -14,6 +14,7 @@ TagManager:
   - Boss
   - up
   - Enemy
+  - teer
   layers:
   - Default
   - TransparentFX
@@ -56,4 +57,7 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 2319895307
+    locked: 0
+  - name: slider
+    uniqueID: 3133383009
     locked: 0

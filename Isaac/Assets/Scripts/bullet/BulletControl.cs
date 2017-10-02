@@ -13,14 +13,13 @@ public class BulletControl : MonoBehaviour
     {
         string Tag;
         Tag = other.tag;
-        if (Tag == "room"||Tag=="OB"||Tag=="magic"||Tag=="Enemy")
+        if (Tag == "room"||Tag=="OB"||Tag=="magic"||Tag=="Enemy"||Tag=="up")
             destroyme();
         switch (Tag)
         {
             case "Enemy":            
             other.GetComponent<EnemyBase>().EnemyDamage(damage);
-            break;
-                    
+            break;                    
         }
     }
 
