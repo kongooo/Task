@@ -22,6 +22,9 @@ public class fireControl : MonoBehaviour
                 Destroy(gameObject);
             none = true;
         }
-            
+        if (other.tag == "player")
+        {
+            other.gameObject.GetComponent<BasePlayer>().SufferDamage(1);
+        }
     }
 }

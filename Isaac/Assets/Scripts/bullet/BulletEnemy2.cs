@@ -21,7 +21,7 @@ public class BulletEnemy2 : MonoBehaviour
     {
         Vector3 posDif = Vector3.Normalize(player - transform.position);
         GetComponent<Rigidbody>().velocity = posDif*speed;       
-        GetComponent<Rigidbody>().velocity+=new Vector3(0,0,0.3f);
+        GetComponent<Rigidbody>().velocity+=new Vector3(0,0,0.25f);
     }
 
     void OnTriggerEnter(Collider col)

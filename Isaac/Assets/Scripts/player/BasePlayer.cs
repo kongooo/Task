@@ -12,7 +12,7 @@ public class BasePlayer : MonoBehaviour
 
     private int HP;
     public GameObject deathBody,head,body,soul;
-    public Slider hpslider;
+    public Slider hpslider,speedSlider,AttackSlider;
     public Text hpText;
     public int maxhp = 6;
 
@@ -35,6 +35,8 @@ public class BasePlayer : MonoBehaviour
         renderer2.material.color = Color.Lerp(renderer2.material.color, Color.white, Time.deltaTime * change);
         hpslider.value = (float) HP / maxhp;
         hpText.text = HP + "/" + maxhp;
+        AttackSlider.value =(float)PlayerAttack.Instance.fireRate / 4;
+        speedSlider.value = (float) PlayerMove.Instance.speed / 10;
         SetDeath();
     }
 
@@ -81,5 +83,53 @@ public class BasePlayer : MonoBehaviour
     {
         soul.GetComponent<SpriteRenderer>().DOFade(1, 1f);
         soul.GetComponent<Rigidbody2D>().gravityScale = -1;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        switch (other.tag)
+        {
+            case "heart":
+            {
+                if (HP >= maxhp-2)
+                {
+                    HP = maxhp;
+                    if(HP<maxhp)
+                    Destroy(other.gameObject);
+                }
+                else if(HP<maxhp-2)
+                {
+                    HP += 2;
+                        Destroy(other.gameObject);
+                }
+                
+            }
+            break;
+            case "speed":
+            {
+                if (PlayerMove.Instance.speed < 9)
+                {
+                    PlayerMove.Instance.speed += 2;
+                    Destroy(other.gameObject);
+                }
+                    
+            }
+                break;
+            case "Attack":
+            {
+                if (PlayerAttack.Instance.fireRate < 4)
+                {
+                    PlayerAttack.Instance.fireRate += 1;
+                    Destroy(other.gameObject);
+                }
+                
+            }
+                break;
+            case "thorn":
+            {
+                SufferDamage(1);
+            }
+                break;
+        }
     }
 }

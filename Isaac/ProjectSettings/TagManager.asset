@@ -15,6 +15,10 @@ TagManager:
   - up
   - Enemy
   - teer
+  - heart
+  - speed
+  - Attack
+  - thorn
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VR.WSA.Persistence;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -13,6 +14,14 @@ public class PlayerAttack : MonoBehaviour
     public Transform left,right;
     public GameObject teer;
     private bool isleft=true;
+
+    private static PlayerAttack _instance;
+    public static PlayerAttack Instance { get { return _instance; } }
+
+    void Awake()
+    {
+        _instance = this;
+    }
 
 	void FixedUpdate ()
 	{
@@ -46,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
             GameObject Teer = GameObject.Instantiate(teer, bulletTrans.position, Quaternion.identity);          
             Teer.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;   
             if(direction.x!=0)
-            Teer.GetComponent<Rigidbody>().velocity+=new Vector3(0,1,0.3f);           
+            Teer.GetComponent<Rigidbody>().velocity+=new Vector3(0,1,0.35f);           
             restTime = 0;
         }
     }

@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 10
-  playerDamage: 0
+  playerDamage: 1
   deathTime: 2
 --- !u!114 &114978307971439178
 MonoBehaviour:
