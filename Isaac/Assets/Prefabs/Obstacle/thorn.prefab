@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4149503597393968}
   - component: {fileID: 212443359476894552}
   - component: {fileID: 65272042398642022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: thorn
   m_TagString: thorn
   m_Icon: {fileID: 0}

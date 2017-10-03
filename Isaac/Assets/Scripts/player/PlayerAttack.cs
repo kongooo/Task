@@ -6,7 +6,7 @@ using UnityEngine.VR.WSA.Persistence;
 public class PlayerAttack : MonoBehaviour
 {
     public float fireRate;   //子弹发射频率
-    public float bulletSpeed,yspeed;   //子弹速度
+    public float bulletSpeed,zspeed;   //子弹速度
 
     public Animator attack_animator;
 
@@ -55,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
             GameObject Teer = GameObject.Instantiate(teer, bulletTrans.position, Quaternion.identity);          
             Teer.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;   
             if(direction.x!=0)
-            Teer.GetComponent<Rigidbody>().velocity+=new Vector3(0,1,0.35f);           
+            Teer.GetComponent<Rigidbody>().velocity+=new Vector3(0,1,zspeed);           
             restTime = 0;
         }
     }

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 135264414442448306}
   - component: {fileID: 54541204526185182}
   - component: {fileID: 114788505148752604}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shit
   m_TagString: OB
   m_Icon: {fileID: 0}

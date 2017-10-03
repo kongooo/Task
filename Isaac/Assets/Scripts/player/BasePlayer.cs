@@ -21,7 +21,7 @@ public class BasePlayer : MonoBehaviour
 	void Awake ()
 	{
 	    HP = maxhp;
-        transform.position=new Vector3(10,1,-0.2f);
+        
 	    _instance = this;
         setTransparency(soul,0);
 	    setTransparency(deathBody,0);
@@ -101,8 +101,7 @@ public class BasePlayer : MonoBehaviour
                 {
                     HP += 2;
                         Destroy(other.gameObject);
-                }
-                
+                }                
             }
             break;
             case "speed":
@@ -111,8 +110,7 @@ public class BasePlayer : MonoBehaviour
                 {
                     PlayerMove.Instance.speed += 2;
                     Destroy(other.gameObject);
-                }
-                    
+                }                   
             }
                 break;
             case "Attack":
@@ -121,8 +119,7 @@ public class BasePlayer : MonoBehaviour
                 {
                     PlayerAttack.Instance.fireRate += 1;
                     Destroy(other.gameObject);
-                }
-                
+                }                
             }
                 break;
             case "thorn":
@@ -130,6 +127,27 @@ public class BasePlayer : MonoBehaviour
                 SufferDamage(1);
             }
                 break;
+            case "updoor":
+            {
+                Camera.main.GetComponent<Transform>().Translate(new Vector3(0,10,0));
+            }
+                break;
+            case "downdoor":
+            {
+                Camera.main.GetComponent<Transform>().Translate(new Vector3(0, -10, 0));
+            }
+                break;
+            case "leftdoor":
+            {
+                Camera.main.GetComponent<Transform>().Translate(new Vector3(-18, 0, 0));
+            }
+                break;
+            case "rightdoor":
+            {
+                Camera.main.GetComponent<Transform>().Translate(new Vector3(18, 0, 0));
+            }
+                break;
+
         }
     }
 }

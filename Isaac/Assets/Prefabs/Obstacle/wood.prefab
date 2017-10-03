@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4031121885521416}
   - component: {fileID: 212358649857891972}
   - component: {fileID: 136735914291302534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wood
   m_TagString: OB
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 54589663251510602}
   - component: {fileID: 136410733392461276}
   - component: {fileID: 114394060187990876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: fire
   m_TagString: OB
   m_Icon: {fileID: 0}

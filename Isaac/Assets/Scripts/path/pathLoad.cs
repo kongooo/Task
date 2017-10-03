@@ -114,6 +114,7 @@ public class pathLoad : MonoBehaviour {
     {
         int x = Mathf.Abs(s.x - e.x);
         int y = Mathf.Abs(s.y - e.y);
+        Debug.Log(new Vector2(x,y));
         if (x > y)
         {
             return y * 14 + (x - y) * 10;

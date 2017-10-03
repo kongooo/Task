@@ -13,8 +13,6 @@ public class GRID : MonoBehaviour {
 
     private float NodeRadius=0.4f;        //节点半径
 
-    
-
     public class NodeItem              //节点类 储存每一个节点的信息
     {
         public bool isWall;
@@ -41,7 +39,10 @@ public class GRID : MonoBehaviour {
 
     private NodeItem[,] Grid;    //二维数组
 
-    private int w = 12, h = 6;
+    public int centerX , centerY;
+    private int Width=18, Height=10;
+    private int width=7, height=4;
+    private int m, n;
 
     //在Hierarchy中管理生成路标的物体
     private GameObject Path;
@@ -51,25 +52,25 @@ public class GRID : MonoBehaviour {
     void Awake()
     {
         EndTransform = GameObject.FindGameObjectWithTag("player").transform;
-        Grid = new NodeItem[w, h];                           //创建对应的节点二维数组
-
+        Grid = new NodeItem[width*2+1,height*2+1];                           //创建对应的节点二维数组
         Path = new GameObject("PathRange");
-
+        m = Mathf.Abs(centerX / Width) ;
+        n =Mathf.Abs(centerY / Height) ;
     }
 
     void Update()
     {
-        for (int x = 0; x < w; x++)
-        for (int y = 0; y < h; y++)
+        for (int x = centerX-width; x < centerX+width; x++)
+        for (int y = centerY-height; y < centerY+height; y++)
         {
             Vector3 pos = new Vector3(x, y, 0);
             bool isWall = false;
-            bool isco = Physics.CheckSphere(pos, 0.3f, floorLayer);
-            if (isco)
+            Collider[] colliders= Physics.OverlapSphere(pos, NodeRadius, floorLayer);
+            if (colliders.Length>0)
             {
                 isWall = true;
             }
-            Grid[x, y] = new NodeItem(isWall, x, y, pos);      //构建节点
+            Grid[Mathf.Abs(x) - Width * m - 2, Mathf.Abs(y) - Height * n - 1] = new NodeItem(isWall, x, y, pos);      //构建节点
         }
     }
 
@@ -80,9 +81,9 @@ public class GRID : MonoBehaviour {
         int x = Mathf.RoundToInt(position.x);
         int y = Mathf.RoundToInt(position.y);
         //限定x y范围
-        x = Mathf.Clamp(x, 0, w - 1);
-        y = Mathf.Clamp(y, 0, h - 1);
-        return Grid[x, y];
+        x = Mathf.Clamp(x, centerX-width, centerX + width);
+        y = Mathf.Clamp(y, centerY-height,centerY+height);
+        return Grid[Mathf.Abs(x) - Width * m - 2, Mathf.Abs(y) - Height * n - 1];
     }
 
 
@@ -99,9 +100,9 @@ public class GRID : MonoBehaviour {
                 {
                     int x = node.x + i;
                     int y = node.y + j;
-                    if (x > -1 && x < w && y > -1 && y < h) //不超过边界则放到集合中
+                    if (x > centerX-width && x < centerX+width && y > centerY-height && y < centerY+height) //不超过边界则放到集合中
                     {
-                        NearList.Add(Grid[x, y]);
+                        NearList.Add(Grid[Mathf.Abs(x) - Width * m - 2, Mathf.Abs(y) - Height * n - 1]);
                     }
                 }
             }

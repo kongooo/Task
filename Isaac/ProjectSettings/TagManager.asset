@@ -11,7 +11,6 @@ TagManager:
   - fly
   - enemy2
   - magic
-  - Boss
   - up
   - Enemy
   - teer
@@ -19,6 +18,10 @@ TagManager:
   - speed
   - Attack
   - thorn
+  - updoor
+  - downdoor
+  - leftdoor
+  - rightdoor
   layers:
   - Default
   - TransparentFX
@@ -64,4 +67,7 @@ TagManager:
     locked: 0
   - name: slider
     uniqueID: 3133383009
+    locked: 0
+  - name: Obsetacle
+    uniqueID: 2053925669
     locked: 0

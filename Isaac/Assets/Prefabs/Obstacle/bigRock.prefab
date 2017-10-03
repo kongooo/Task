@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212524779945507406}
   - component: {fileID: 65844178311138474}
   - component: {fileID: 54338287879691868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bigRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,8 +67,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.56075776, y: 0.5509814, z: 0.2}
-  m_Center: {x: -0.005754725, y: 0.010279854, z: 0}
+  m_Size: {x: 0.56075776, y: 0.5509814, z: 0.98607785}
+  m_Center: {x: -0.005754725, y: 0.010279854, z: -0.04437527}
 --- !u!212 &212524779945507406
 SpriteRenderer:
   m_ObjectHideFlags: 1
