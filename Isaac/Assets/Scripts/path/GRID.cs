@@ -49,7 +49,7 @@ public class GRID : MonoBehaviour {
 
     private List<GameObject> PathObject = new List<GameObject>();
 
-    void Awake()
+    void Start()
     {
         EndTransform = GameObject.FindGameObjectWithTag("player").transform;
         Grid = new NodeItem[width*2+1,height*2+1];                           //创建对应的节点二维数组
@@ -60,6 +60,10 @@ public class GRID : MonoBehaviour {
 
     void Update()
     {
+        if (GameObject.FindGameObjectWithTag("player").transform.parent != transform.parent)
+            this.enabled = false;
+        else
+            this.enabled = true;
         for (int x = centerX-width; x < centerX+width; x++)
         for (int y = centerY-height; y < centerY+height; y++)
         {
@@ -70,6 +74,7 @@ public class GRID : MonoBehaviour {
             {
                 isWall = true;
             }
+            //Debug.Log(gameObject.name+ new Vector2(Mathf.Abs(x) - Width * m - 2, Mathf.Abs(y) - Height * n - 1));
             Grid[Mathf.Abs(x) - Width * m - 2, Mathf.Abs(y) - Height * n - 1] = new NodeItem(isWall, x, y, pos);      //构建节点
         }
     }

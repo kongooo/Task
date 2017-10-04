@@ -13,6 +13,10 @@ public class pathLoad : MonoBehaviour {
     
     void Update()
     {
+        if (GameObject.FindGameObjectWithTag("player").transform.parent != transform.parent)
+            this.enabled = false;
+        else
+            this.enabled = true;
         changepath(Grid.StartTransform.position, Grid.EndTransform.position);
     }
 
@@ -114,7 +118,6 @@ public class pathLoad : MonoBehaviour {
     {
         int x = Mathf.Abs(s.x - e.x);
         int y = Mathf.Abs(s.y - e.y);
-        Debug.Log(new Vector2(x,y));
         if (x > y)
         {
             return y * 14 + (x - y) * 10;

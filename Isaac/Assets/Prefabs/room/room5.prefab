@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 65364977102477452}
   - component: {fileID: 65742226709831270}
   - component: {fileID: 65200222256553818}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RoomCollider
   m_TagString: room
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4888365598481520}
   - component: {fileID: 212543844227648066}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: room5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4579351905247514}
   - component: {fileID: 65780512475399494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: magic
   m_TagString: magic
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4836692156652892}
   - component: {fileID: 65290944589544948}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: up
   m_TagString: up
   m_Icon: {fileID: 0}

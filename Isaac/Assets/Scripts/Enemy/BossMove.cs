@@ -30,8 +30,12 @@ public class BossMove : MonoBehaviour
 	}
 		
 	void Update ()
-	{	           
-	    if (i >= 2)
+	{
+        if (GameObject.FindGameObjectWithTag("player").transform.parent != transform.parent)
+            this.enabled = false;
+        else
+            this.enabled = true;
+        if (i >= 2)
 	    {
 	        dir = playerTrans.position - transform.position;
 	        i = 0;

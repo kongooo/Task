@@ -23,6 +23,10 @@ public class LegEnemy : MonoBehaviour
 	
 	void Update ()
 	{
+	    if (GameObject.FindGameObjectWithTag("player").transform.parent != transform.parent)
+	        this.enabled = false;
+	    else
+	        this.enabled = true;
         if (j >= 1)
         {
             j = 0;

@@ -17,7 +17,11 @@ public class Enemy2Attack : MonoBehaviour
 	
 	
 	void Update () {
-	    if (j >= 0.5f)
+	    if (GameObject.FindGameObjectWithTag("player").transform.parent != transform.parent)
+	        this.enabled = false;
+	    else
+	        this.enabled = true;
+        if (j >= 0.5f)
 	    {
 	        j = 0;
 	        playerPos = player.GetComponent<Transform>().position;
