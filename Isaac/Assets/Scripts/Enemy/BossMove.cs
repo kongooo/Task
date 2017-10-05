@@ -6,6 +6,9 @@ using Random = UnityEngine.Random;
 
 public class BossMove : MonoBehaviour
 {
+    private static BossMove _instance;
+    public static BossMove Instance { get { return _instance; } }
+
     private Transform playerTrans;
     public GameObject bullet;
 
@@ -18,19 +21,33 @@ public class BossMove : MonoBehaviour
     private bool ismove=false, isattack1=false, isattack2=false;
 
     private float seed,saw1=2;
-    private float i=2;
+    private float i = 2;
+    [HideInInspector]public float countTime;
+    private bool bossmove ;
 
-	void Awake ()
+	void Start ()
 	{
+	    bossmove = true;
+	    countTime = 1;
+	    _instance = this;
 	    playerTrans = GameObject.FindGameObjectWithTag("player").transform;
         dir = playerTrans.position - transform.position;
         rigidbody = GetComponent<Rigidbody>();
 	    animator = GetComponent<Animator>();
-	    StartCoroutine("move");
 	}
 		
 	void Update ()
 	{
+	    if (countTime <= 0)
+	    {
+	        if (bossmove)
+	        {
+	            Debug.Log("move");
+	            StartCoroutine("move");
+	            bossmove = false;
+            }	        
+        }
+	    countTime -= Time.deltaTime;
         if (i >= 2)
 	    {
 	        dir = playerTrans.position - transform.position;

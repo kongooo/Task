@@ -26,7 +26,7 @@ public class BulletEnemy2 : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "room" || col.tag == "player" || col.tag == "magic")
+        if (col.tag == "room" || col.tag == "player" || col.tag == "magic"||col.tag=="up")
         {
             animator.SetTrigger("break");    
             GetComponent<Rigidbody>().velocity=Vector3.zero;

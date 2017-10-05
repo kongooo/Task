@@ -31,15 +31,6 @@ public class ManageDoor : MonoBehaviour {
 	    i = 0;
 	}
 
-    void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("player");
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.collider.tag == "player")
-            other.transform.parent = transform.parent;
-        Debug.Log("playerParent="+other.transform.parent.name);
-    }
+    
+    
 }

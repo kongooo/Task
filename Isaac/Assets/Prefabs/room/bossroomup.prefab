@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4540902092865700}
   - component: {fileID: 212768159574423864}
   - component: {fileID: 65668448726156408}
+  - component: {fileID: 114111588984342324}
   m_Layer: 0
   m_Name: bossroomup
   m_TagString: updoor
@@ -34,9 +35,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1072383638520508}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.817, y: 8.96, z: 0}
-  m_LocalScale: {x: 3.202626, y: 3.37007, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5227363, y: 1.2075605, z: 0}
+  m_LocalScale: {x: 0.9213696, y: 1.0276676, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,6 +54,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.37339503, y: 0.33170566, z: 0.77784616}
   m_Center: {x: -0.004381518, y: -0.029147163, z: 0.2889231}
+--- !u!114 &114111588984342324
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072383638520508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9caf7354265a0414da823ed1cd5b874e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212768159574423864
 SpriteRenderer:
   m_ObjectHideFlags: 1

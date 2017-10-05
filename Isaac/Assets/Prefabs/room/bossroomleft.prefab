@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4653169779191564}
   - component: {fileID: 212832523620948510}
   - component: {fileID: 65191598918736522}
+  - component: {fileID: 114267596612167234}
   m_Layer: 0
   m_Name: bossroomleft
   m_TagString: leftdoor
@@ -34,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1628944541579780}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 12.01, y: 4.39, z: 0}
-  m_LocalScale: {x: 3.202626, y: 3.37007, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7137919, y: 0.36295643, z: 0}
+  m_LocalScale: {x: 0.97660786, y: 0.96954244, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &65191598918736522
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -53,6 +54,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.37339503, y: 0.33170566, z: 0.77784616}
   m_Center: {x: -0.004381518, y: -0.029147163, z: 0.2889231}
+--- !u!114 &114267596612167234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1628944541579780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9caf7354265a0414da823ed1cd5b874e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212832523620948510
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -85,7 +97,7 @@ SpriteRenderer:
   m_SortingLayerID: 1207005389
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e5ad663b03961d9418d1418adba155ed, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 580babc1bec8b2f42ae0821fd1990fdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

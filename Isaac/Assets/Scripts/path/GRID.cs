@@ -155,7 +155,7 @@ public class GRID : MonoBehaviour {
         else
             currentpoint = (currentpoint + 1) % pathpos.Length;
 
-        if (gameObject.tag!="fly")
+        if (gameObject.name!="fly"&&gameObject.name!="spider")
         {
             //动画判断
             Vector3 dir = pathpos[currentpoint] - AIpos;

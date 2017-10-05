@@ -18,11 +18,17 @@ public class EnemyBase : MonoBehaviour
 
     void Update()
     {
+        SetEnable();
         renderer.material.color = Color.Lerp(renderer.material.color, Color.white, Time.deltaTime * 5);
         if (Hp == 0)
             isdeath = true;
         death();
-        SetEnable();
+        if(gameObject.name!="boss")
+        if(RoomManage.Instance.islast)
+            transform.localPosition=new Vector3(
+                Mathf.Clamp(transform.localPosition.x,-1.7f,1.7f),
+                Mathf.Clamp(transform.localPosition.y,-0.9f,0.9f),
+                transform.localPosition.z);
     }
     public void EnemyDamage(int damage)
     {
@@ -54,26 +60,24 @@ public class EnemyBase : MonoBehaviour
 
     private void SetEnable()
     {
-        if (player.transform.parent.name!= transform.parent.name)
+        if (Vector2.Distance(Camera.main.transform.position,transform.position)>7)
         {
-            Debug.Log("playerParent"+ player.transform.parent.name);
-            Debug.Log("myParent"+transform.parent.name);
-            if(GetComponent<GRID>())
-            GetComponent<GRID>().enabled = false;
+            if(BossMove.Instance.countTime>0)
+            if (GetComponent<BossMove>())
+                GetComponent<BossMove>().enabled = false;
+            if (GetComponent<GRID>())
+                GetComponent<GRID>().enabled = false;
             if (GetComponent<pathLoad>())
-            GetComponent<pathLoad>().enabled = false;
+                GetComponent<pathLoad>().enabled = false;
             if (GetComponent<LegEnemy>())
                 GetComponent<LegEnemy>().enabled = false;
             if (GetComponent<Enemy2Attack>())
                 GetComponent<Enemy2Attack>().enabled = false;
             if (GetComponent<FlyMove>())
-                GetComponent<FlyMove>().enabled = false;
-            if (GetComponent<BossMove>())
-                GetComponent<BossMove>().enabled = false;
+                GetComponent<FlyMove>().enabled = false;                      
         }
         else
         {
-            Debug.Log("same");
             if (GetComponent<GRID>())
                 GetComponent<GRID>().enabled = true;
             if (GetComponent<pathLoad>())

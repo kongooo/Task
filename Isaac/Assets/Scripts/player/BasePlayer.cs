@@ -20,8 +20,7 @@ public class BasePlayer : MonoBehaviour
     private Renderer renderer1,renderer2;
 	void Awake ()
 	{
-	    HP = maxhp;
-        
+	    HP = maxhp;       
 	    _instance = this;
         setTransparency(soul,0);
 	    setTransparency(deathBody,0);

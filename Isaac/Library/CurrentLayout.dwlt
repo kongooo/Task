@@ -184,7 +184,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 45
+  controlID: 68
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -363,14 +363,14 @@ MonoBehaviour:
     width: 767
     height: 566
   m_SceneLighting: 1
-  lastFramingTime: 24199.574256655626
+  lastFramingTime: 17197.703245613637
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.9924253, y: 0.6958774, z: -0.171875}
+    m_Target: {x: 7.9914904, y: 5.535719, z: -74.96875}
     speed: 2
-    m_Value: {x: 1.9924253, y: 0.6958774, z: -0.171875}
+    m_Value: {x: 7.9914904, y: 5.535719, z: -74.96875}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -397,14 +397,14 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 27.022223
+    m_Target: 28.278236
     speed: 2
-    m_Value: 27.022223
+    m_Value: 28.278236
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.055499464, y: 0.24690554, z: -0.01416555, w: 0.9673453}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -460,10 +460,10 @@ MonoBehaviour:
     - {x: 410.2, y: 177.20001}
     - {x: 436.2, y: 231.6}
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 5a71c4104bf9cb641846cdc20e345ab1,
+  m_AnimatorController: {fileID: 9100000, guid: dd61d016110b53344b5923d6f1a4b05b,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 1107579270591955718, guid: 5a71c4104bf9cb641846cdc20e345ab1,
+  - m_Target: {fileID: 1107628300326174374, guid: dd61d016110b53344b5923d6f1a4b05b,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -504,23 +504,23 @@ MonoBehaviour:
     height: 228
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b6e1e8ff
-    m_LastClickedID: -1515082
-    m_ExpandedIDs: cc8ee9ff908fe9ffc625eaff9cb7eaffc638ebff9439ebff706becff2c6cecffce6eecff4455edff96f6edfff89ceeff4e9deefff03cefffaa93efffe493efffe24df6ff124ef6ff00dbfaffc2dcfbff02ddfbffeeeefbffa007fcff3c0bfcff2023fcff2ed2fdff1afcffff00000000
+    m_SelectedIDs: 702d0000
+    m_LastClickedID: 0
+    m_ExpandedIDs: f653e8ffb454e8ffda55e8ff5882e9ffa6a5e9ffceb9e9ffa6e3e9ff26ffe9ff623beaffb262eaff2ed3eaff1a51ebfff098ebff0c75ecffd446edff1ee9edfffa3deeffe2f5eeff1cf8eeff5009effffa09efffc431efff3633efffc698efff6499efff329aeffffa9aefffb09befffba9cefff7c9defffac9defffaab2efff58b3efff1eb4efffe8b4efffbeb5efff52b6efff12b7efffb6b7efff1eb9efffceb9efff9ebaefff7ebbefff20bcefff5abdefff4cbeefff34bfefff6ebfefffa295f0ff1cecf0ff523af5ffae3cf5ffdcf4f5ffdefbf5ff3c3df8ff3e3df8ffe2e2f8ff7081f9ff4285f9ff5804faffb0a3faffa0a7faffd277fbffb87cfbffb6bbfbfff2c3fbff54ecfbff08f1fbffb409fcffda16fcffb458fcffb2bcfcff6cbdfcff92befcff1204fdfffe76fdffb47ffdff98cbfdff1e0dfeff200dfeffd256feff4c57feff1492feffa492feff2294feff1ec1feff4c33ffff664fffff6273ffff32e1ffff18fcffff1afcffff0000000014510000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: rightdoor
-      m_OriginalName: rightdoor
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -735840
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
@@ -567,18 +567,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs/Enemy
+    - Assets/Anami/head
   m_ViewMode: 1
   m_StartGridSize: 58
   m_LastFolders:
-  - Assets/Prefabs/Enemy
+  - Assets/Anami/head
   m_LastFoldersGridSize: 58
   m_LastProjectPath: C:\Users\13125\Desktop\Task\Isaac
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 148}
-    m_SelectedIDs: f42b0000
-    m_LastClickedID: 11252
+    scrollPos: {x: 0, y: 312}
+    m_SelectedIDs: ec270000
+    m_LastClickedID: 10220
     m_ExpandedIDs: 0000000054260000d2260000aa2b00005a2d0000742e0000fe2e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -634,22 +634,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000ae5d00004c28000070330000a8260000942a00004e280000da2700001228000078260000eab30000be28000084290000082a00006c270000c4280000b02c0000e43df8ff7a2700009a2a0000e02c000032270000cc26000000000000702a0000e0270000362d0000ea650000c82b0000f02c0000bc5f0000c62d0000962c00006e4100006a4100006c410000
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000ae5d00004c28000070330000a8260000942a00004e280000da2700001228000078260000eab30000be28000084290000082a00006c270000c4280000b02c0000e43df8ff7a2700009a2a0000e02c000032270000cc26000000000000702a0000e0270000362d0000ea650000c82b0000f02c0000bc5f0000c62d0000962c00006e4100006a4100006c410000e2510000e0510000e4510000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: bossroomleft
+      m_OriginalName: bossroomleft
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 10666
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
@@ -659,7 +659,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 437}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 58
   m_DirectoriesAreaWidth: 110
 --- !u!114 &17
@@ -688,7 +688,7 @@ MonoBehaviour:
     y: 92
     width: 275
     height: 566
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 533.9551}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: -160

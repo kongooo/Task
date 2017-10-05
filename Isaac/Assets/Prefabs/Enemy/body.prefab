@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4758210194779256}
   - component: {fileID: 212917034967408240}
   - component: {fileID: 95326474205351262}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 853_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 54561681208051492}
   - component: {fileID: 135082124144073722}
   - component: {fileID: 114195373822982594}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ Rigidbody:
   m_GameObject: {fileID: 1166652441730062}
   serializedVersion: 2
   m_Mass: 0.0000001
-  m_Drag: 0
+  m_Drag: 5000
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0

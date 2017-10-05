@@ -6,11 +6,8 @@ public class RoomManage : MonoBehaviour
 {
     private static RoomManage _instance;
     public static RoomManage Instance{get { return _instance; }}
-    
-    void Awake()
-    {
-        _instance = this;
-    }
+
+    public Vector3 start;
 
     public class Room
     {
@@ -21,10 +18,10 @@ public class RoomManage : MonoBehaviour
         public Room(float x,float y)
         {
             this.center=new Vector3(x,y,0);
-            this.door_up=new Vector3(0,1.15f,0);
-            this.door_down=new Vector3(0,-1.15f,0);
-            this.door_left=new Vector3(-1.95f,0,0);
-            this.door_right=new Vector3(1.95f,0,0);
+            this.door_up=new Vector3(0,1.185f,0);
+            this.door_down=new Vector3(0,-1.185f,0);
+            this.door_left=new Vector3(-1.97f,0,0);
+            this.door_right=new Vector3(1.97f,0,0);
         }
         public Room parentRoom;
     }
@@ -50,7 +47,9 @@ public class RoomManage : MonoBehaviour
     public GameObject start_room;
     public GameObject boss_room;
     public GameObject []boss_doors;
-    public int Roomcount=0;
+    public LayerMask OBLayer;
+    private int Roomcount=0;
+    public int RandomCount;
     private int Doorcount=0;
     public LayerMask roomLayer;
     //防止出现重复房间
@@ -61,7 +60,26 @@ public class RoomManage : MonoBehaviour
     private List<Door> RecordDoor=new List<Door>();
     private int roomStart=1, roomEnd=0, doorStart=0, doorEnd=-1;
     private bool iswall;
-    public bool islast=false;
+    [HideInInspector]public bool islast;
+    public int enemymin, enemymax;
+
+    void Awake()
+    {
+        _instance = this;
+    }
+    void Start()
+    {
+        islast = false;
+        initStartRoom(start);
+        for (int i = 0; i < RandomCount; i++)
+        {
+            initDoorForRooms();
+            initRoomForDoors();
+        }       
+        islast = true;
+        initDoorForRooms();
+        initBossRoom();
+    }
 
     public void initStartRoom(Vector3 pos)
     {
@@ -74,7 +92,6 @@ public class RoomManage : MonoBehaviour
         initDoor(roomMes,room);       
         initRoomForDoors();
     }
-
 
     public void initRoom(Room ParentRoom,GameObject _room,int doorNumber,GameObject door,Door doorMes)
     {
@@ -212,17 +229,41 @@ public class RoomManage : MonoBehaviour
 
     public void initEnemy(Vector3 pos,GameObject room)
     {
-        int enemy_count = Random.Range(4, 8);
+        int enemy_count = Random.Range(enemymin, enemymax);
+        int i = 0;
+        Vector2[]recordPos=new Vector2[8];
+        Vector2[] EnemyPos = new Vector2[8];
+        GameObject[] ForChange=new GameObject[8];
+        for (int x = (int)pos.x - 5; x < pos.x + 5; x++)
+        for (int y = (int)pos.y - 2; y < (int)pos.y + 2; y++)
+        {
+            Collider[] colliders = Physics.OverlapSphere(pos, 0.5f, OBLayer);
+            if (colliders.Length == 0)
+            if (i < 8)
+                    recordPos[i] = new Vector2(x, y);
+            i++;
+        }
+        for (int k = 0; k < 8; k++)
+        {
+            ForChange[k] = new GameObject("change1");
+            ForChange[k].transform.position = recordPos[k];
+            ForChange[k].transform.SetParent(room.transform);
+        }
+        
         for (int j = 0; j <= enemy_count; j++)
         {
-            int enemy_type = Random.Range(0, 120) % 6;
-            GameObject enemy = GameObject.Instantiate(enemy_prefabs[enemy_type], Vector3.zero, Quaternion.identity);
+            int enemy_type = Random.Range(0, 120) % 6;                       
+            GameObject enemy = GameObject.Instantiate(enemy_prefabs[enemy_type],ForChange[j].transform.localPosition, Quaternion.identity);
             if (enemy.GetComponent<GRID>())
             {
                 enemy.GetComponent<GRID>().centerX = (int)pos.x;
                 enemy.GetComponent<GRID>().centerY = (int)pos.y;
             }
             enemy.transform.SetParent(room.transform,false);
+        }
+        foreach (GameObject temp in ForChange)
+        {
+            Destroy(temp);
         }
     }
     //通过编号得到门的位置
@@ -242,8 +283,60 @@ public class RoomManage : MonoBehaviour
         return Vector3.zero;
     }
 
-    public void initBossRoom(Vector3 pos)
+    private Vector3 GetBossDoorDir(Room bossroom)
     {
-        GameObject bossroom = GameObject.Instantiate(boss_room, pos, Quaternion.identity);
+        switch (bossroom.doorDir)
+        {
+            case 2:
+                return bossroom.door_up;
+            case 3:
+                return bossroom.door_right;
+            case 0:
+                return bossroom.door_down;
+            case 1:
+                return bossroom.door_left;
+        }
+        return Vector3.zero;
+    }
+    private int GetBossDoorNumber(Room bossroom)
+    {
+        switch (bossroom.doorDir)
+        {
+            case 2:
+                return 0;
+            case 3:
+                return 1;
+            case 0:
+                return 2;
+            case 1:
+                return 3;
+        }
+        return 0;
+    }
+
+    public void initBossRoom()
+    {
+        Debug.Log("boss");
+        int BossRoom = Random.Range(roomStart, roomEnd+1);
+        GameObject BossDoor =GameObject.Instantiate(boss_doors[GetBossDoorNumber(roomList[BossRoom])], GetBossDoorDir(roomList[BossRoom]), Quaternion.identity);
+        BossDoor.transform.SetParent(RoomPrefabs[BossRoom].transform,false);
+        Vector3 BossroomPos = new Vector3();
+        GameObject room;
+        switch (GetBossDoorNumber(roomList[BossRoom]))
+        {
+            case 0:
+                BossroomPos = roomList[BossRoom].center + new Vector3(0, 10, 0);
+                break;
+            case 1:
+                BossroomPos = roomList[BossRoom].center + new Vector3(18, 0, 0);
+                break;
+            case 2:
+                BossroomPos = roomList[BossRoom].center + new Vector3(0, -10, 0);
+                break;
+            case 3:
+                BossroomPos = roomList[BossRoom].center + new Vector3(-18, 0, 0);
+                break;
+        }
+        GameObject.Instantiate(boss_room, BossroomPos, Quaternion.identity);
     }    
 }

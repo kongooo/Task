@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114978307971439178}
   - component: {fileID: 136233573082675228}
   - component: {fileID: 114294193706353874}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -52,8 +52,8 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1942792015391072}
   serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
+  m_Mass: 5000
+  m_Drag: 5000
   m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabd898c08045424f9c4a918ddc1610e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 10
+  Hp: 20
   playerDamage: 1
   deathTime: 2
 --- !u!114 &114978307971439178
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1382999873807824, guid: a23e76174075cd14a896745212980755, type: 2}
+  countTime: 100
 --- !u!136 &136233573082675228
 CapsuleCollider:
   m_ObjectHideFlags: 1
