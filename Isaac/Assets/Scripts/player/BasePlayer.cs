@@ -130,13 +130,13 @@ public class BasePlayer : MonoBehaviour
             case "updoor":
             {
                 Camera.main.GetComponent<Transform>().Translate(new Vector3(0,10,0));
-                    transform.Translate(0,5,0);
+                    transform.Translate(0,4,0);
             }
                 break;
             case "downdoor":
             {
                 Camera.main.GetComponent<Transform>().Translate(new Vector3(0, -10, 0));
-                    transform.Translate(0,-5,0);
+                    transform.Translate(0,-4,0);
             }
                 break;
             case "leftdoor":

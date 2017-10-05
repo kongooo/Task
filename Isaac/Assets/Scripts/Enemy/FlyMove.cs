@@ -14,11 +14,8 @@ public class FlyMove : MonoBehaviour
 	}
 	
 	
-	void Update () {
-	    if (GameObject.FindGameObjectWithTag("player").transform.parent != transform.parent)
-	        this.enabled = false;
-	    else
-	        this.enabled = true;
+	void Update ()
+    { 
         rigidbody.MovePosition(Vector3.Lerp(transform.position,playerTrans.position,flySpeed*Time.deltaTime));
 	}
 }

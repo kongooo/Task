@@ -13,10 +13,6 @@ public class pathLoad : MonoBehaviour {
     
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("player").transform.parent != transform.parent)
-            this.enabled = false;
-        else
-            this.enabled = true;
         changepath(Grid.StartTransform.position, Grid.EndTransform.position);
     }
 

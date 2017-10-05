@@ -59,11 +59,7 @@ public class GRID : MonoBehaviour {
     }
 
     void Update()
-    {
-        if (GameObject.FindGameObjectWithTag("player").transform.parent != transform.parent)
-            this.enabled = false;
-        else
-            this.enabled = true;
+    {       
         for (int x = centerX-width; x < centerX+width; x++)
         for (int y = centerY-height; y < centerY+height; y++)
         {

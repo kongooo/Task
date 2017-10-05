@@ -6,24 +6,40 @@ using UnityEngine;
 public class ManageDoor : MonoBehaviour {
 
     private List<Transform> EnemyList=new List<Transform>();
+    private int i;
+
+    void Start()
+    {
+        GetComponent<SpriteRenderer>().color=Color.red;
+    }
 
 	void Update ()
 	{
 	    Transform[] gameObjects = gameObject.transform.parent.GetComponentsInChildren<Transform>();
-       
-	    for (int i = 0; i < gameObjects.Length; i++)
-	    {	        
-	        if (gameObjects[i].gameObject.tag == "Enemy")
-	           EnemyList.Add(gameObjects[i]);
+
+	    foreach (Transform trans in gameObjects)
+	    {
+	        if (trans.tag == "Enemy")
+	            i++;
 	    }
-	    if (EnemyList.Count == 0)
+	    if (i == 0)
+	    {
 	        GetComponent<BoxCollider>().isTrigger = true;
+            GetComponent<SpriteRenderer>().color=Color.white;
+        }
+	        
+	    i = 0;
 	}
 
-    void OntriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if(other.tag=="player")
-            other.transform.SetParent(transform.parent);
         Debug.Log("player");
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.tag == "player")
+            other.transform.parent = transform.parent;
+        Debug.Log("playerParent="+other.transform.parent.name);
     }
 }
