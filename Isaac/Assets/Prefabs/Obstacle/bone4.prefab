@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 136020219197963570}
   m_Layer: 8
   m_Name: bone4
-  m_TagString: Untagged
+  m_TagString: OB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1250310947986660}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -100,7 +100,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975071989
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300038, guid: 9a405c13feb790f438faa77a6266efab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

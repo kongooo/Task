@@ -46,9 +46,13 @@ public class RoomManage : MonoBehaviour
     public GameObject[] enemy_prefabs;
     public GameObject start_room;
     public GameObject boss_room;
+    public GameObject prop_room;
+
     public GameObject []boss_doors;
+    public GameObject[] prop_doors;
     public LayerMask OBLayer;
     private int Roomcount=0;
+    private int bossRoomFront,propRoomFront;
     public int RandomCount;
     private int Doorcount=0;
     public LayerMask roomLayer;
@@ -78,7 +82,17 @@ public class RoomManage : MonoBehaviour
         }       
         islast = true;
         initDoorForRooms();
-        initBossRoom();
+        bossRoomFront = Random.Range(roomStart, roomEnd + 1);
+        int r1 = Random.Range(roomStart, bossRoomFront);
+        int r2 = Random.Range(bossRoomFront + 1, roomEnd);
+        if (r1 != bossRoomFront)
+            propRoomFront = r1;
+        else
+        {
+            propRoomFront = r2;
+        }
+        initSpecialRoom(bossRoomFront,boss_doors,boss_room);
+        initSpecialRoom(propRoomFront,prop_doors,prop_room);
     }
 
     public void initStartRoom(Vector3 pos)
@@ -226,24 +240,23 @@ public class RoomManage : MonoBehaviour
             }
         }
     }
-
+    //随机生成敌人
     public void initEnemy(Vector3 pos,GameObject room)
     {
         int enemy_count = Random.Range(enemymin, enemymax);
         int i = 0;
-        Vector2[]recordPos=new Vector2[8];
+        Vector2[]recordPos=new Vector2[16];
         Vector2[] EnemyPos = new Vector2[8];
-        GameObject[] ForChange=new GameObject[8];
-        for (int x = (int)pos.x - 5; x < pos.x + 5; x++)
-        for (int y = (int)pos.y - 2; y < (int)pos.y + 2; y++)
+        GameObject[] ForChange=new GameObject[16];
+        for (int x = (int)pos.x - 2; x < pos.x + 2; x++)
+        for (int y = (int)pos.y - 3; y < (int)pos.y + 3; y++)
         {
-            Collider[] colliders = Physics.OverlapSphere(pos, 0.5f, OBLayer);
-            if (colliders.Length == 0)
-            if (i < 8)
-                    recordPos[i] = new Vector2(x, y);
+            Collider[] colliders = Physics.OverlapSphere(pos, 1f, OBLayer);
+            if (colliders.Length == 0&&i<16)
+                recordPos[i] = new Vector2(x, y);
             i++;
         }
-        for (int k = 0; k < 8; k++)
+        for (int k = 0; k < 16; k++)
         {
             ForChange[k] = new GameObject("change1");
             ForChange[k].transform.position = recordPos[k];
@@ -252,8 +265,9 @@ public class RoomManage : MonoBehaviour
         
         for (int j = 0; j <= enemy_count; j++)
         {
-            int enemy_type = Random.Range(0, 120) % 6;                       
-            GameObject enemy = GameObject.Instantiate(enemy_prefabs[enemy_type],ForChange[j].transform.localPosition, Quaternion.identity);
+            int enemy_type = Random.Range(0, 120) % 6;
+            int enemyPos = Random.Range(0, 16);
+            GameObject enemy = GameObject.Instantiate(enemy_prefabs[enemy_type],ForChange[enemyPos].transform.localPosition, Quaternion.identity);
             if (enemy.GetComponent<GRID>())
             {
                 enemy.GetComponent<GRID>().centerX = (int)pos.x;
@@ -314,29 +328,32 @@ public class RoomManage : MonoBehaviour
         return 0;
     }
 
-    public void initBossRoom()
-    {
-        Debug.Log("boss");
-        int BossRoom = Random.Range(roomStart, roomEnd+1);
-        GameObject BossDoor =GameObject.Instantiate(boss_doors[GetBossDoorNumber(roomList[BossRoom])], GetBossDoorDir(roomList[BossRoom]), Quaternion.identity);
-        BossDoor.transform.SetParent(RoomPrefabs[BossRoom].transform,false);
+    public void initSpecialRoom(int RoomNumber,GameObject [] SpecialDoors,GameObject SpecialRoom)
+    {        
+        GameObject BossDoor =GameObject.Instantiate(SpecialDoors[GetBossDoorNumber(roomList[RoomNumber])], GetBossDoorDir(roomList[RoomNumber]), Quaternion.identity);
+        BossDoor.transform.SetParent(RoomPrefabs[RoomNumber].transform,false);
         Vector3 BossroomPos = new Vector3();
         GameObject room;
-        switch (GetBossDoorNumber(roomList[BossRoom]))
+        switch (GetBossDoorNumber(roomList[RoomNumber]))
         {
             case 0:
-                BossroomPos = roomList[BossRoom].center + new Vector3(0, 10, 0);
+                BossroomPos = roomList[RoomNumber].center + new Vector3(0, 10, 0);
                 break;
             case 1:
-                BossroomPos = roomList[BossRoom].center + new Vector3(18, 0, 0);
+                BossroomPos = roomList[RoomNumber].center + new Vector3(18, 0, 0);
                 break;
             case 2:
-                BossroomPos = roomList[BossRoom].center + new Vector3(0, -10, 0);
+                BossroomPos = roomList[RoomNumber].center + new Vector3(0, -10, 0);
                 break;
             case 3:
-                BossroomPos = roomList[BossRoom].center + new Vector3(-18, 0, 0);
+                BossroomPos = roomList[RoomNumber].center + new Vector3(-18, 0, 0);
                 break;
         }
-        GameObject.Instantiate(boss_room, BossroomPos, Quaternion.identity);
-    }    
+        GameObject bossRoom=Instantiate(SpecialRoom, BossroomPos, Quaternion.identity);
+        Room bossroom=new Room(BossroomPos.x,BossroomPos.y);
+        bossroom.doorDir = roomList[RoomNumber].doorDir;
+        GameObject BOSSDoor = GameObject.Instantiate(SpecialDoors[roomList[RoomNumber].doorDir], GetDoorPos(bossroom),
+            Quaternion.identity);
+        BOSSDoor.transform.SetParent(bossRoom.transform,false);
+    }   
 }

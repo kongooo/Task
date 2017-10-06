@@ -10,7 +10,7 @@ public class BasePlayer : MonoBehaviour
     private int change = 5;
     public static BasePlayer Instance { get { return _instance; } }
 
-    private int HP;
+    public int HP;
     public GameObject deathBody,head,body,soul;
     public Slider hpslider,speedSlider,AttackSlider;
     public Text hpText;
@@ -84,32 +84,32 @@ public class BasePlayer : MonoBehaviour
         soul.GetComponent<Rigidbody2D>().gravityScale = -1;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision Other)
     {
-        switch (other.tag)
+        switch (Other.collider.tag)
         {
             case "heart":
             {
-                if (HP >= maxhp-2)
+                if (HP >= maxhp - 2)
                 {
                     HP = maxhp;
-                    if(HP<maxhp)
-                    Destroy(other.gameObject);
+                    if (HP < maxhp)
+                        Destroy(Other.gameObject);
                 }
-                else if(HP<maxhp-2)
+                else if (HP < maxhp - 2)
                 {
                     HP += 2;
-                        Destroy(other.gameObject);
-                }                
+                    Destroy(Other.gameObject);
+                }
             }
-            break;
+                break;
             case "speed":
             {
                 if (PlayerMove.Instance.speed < 9)
                 {
                     PlayerMove.Instance.speed += 2;
-                    Destroy(other.gameObject);
-                }                   
+                    Destroy(Other.gameObject);
+                }
             }
                 break;
             case "Attack":
@@ -117,10 +117,17 @@ public class BasePlayer : MonoBehaviour
                 if (PlayerAttack.Instance.fireRate < 4)
                 {
                     PlayerAttack.Instance.fireRate += 1;
-                    Destroy(other.gameObject);
-                }                
+                    Destroy(Other.gameObject);
+                }
             }
                 break;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        switch (other.tag)
+        {
             case "thorn":
             {
                 SufferDamage(1);

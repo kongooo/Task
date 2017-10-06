@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1076879905008246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9937049, y: -0.31103826, z: -0.2}
+  m_LocalPosition: {x: -0.329, y: -0.243, z: -0.2}
   m_LocalScale: {x: 1.521171, y: 1.5894973, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,10 +53,10 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1076879905008246}
   serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 5000
+  m_Mass: 200
+  m_Drag: 100
   m_AngularDrag: 0
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
@@ -71,8 +71,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.22, z: 0.05}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.16, y: 0.21999998, z: 2.3624616}
+  m_Center: {x: 0, y: 0, z: -0.9727845}
 --- !u!95 &95885169832625992
 Animator:
   serializedVersion: 3
@@ -104,6 +104,39 @@ MonoBehaviour:
   Hp: 4
   playerDamage: 1
   deathTime: 1
+  DeathSpecial:
+  - {fileID: 1169024101141468, guid: 7a33e6e954df0bc4681d25928d3a85f7, type: 2}
+  - {fileID: 1264306858222394, guid: f6b19794292407a43b09973885da8de5, type: 2}
+  - {fileID: 1285649100257530, guid: e3877c43e15937c4faab1a78ecff650c, type: 2}
+  - {fileID: 1120481259596918, guid: fd8f4c24ee19a3a4584838616f090618, type: 2}
+  - {fileID: 1325523149128300, guid: 19fd1fc3f4589454ca6a8e2dc25fe8c8, type: 2}
+  - {fileID: 1178853225044022, guid: 9955420b084176d43bdd66082d9da07a, type: 2}
+  - {fileID: 1424912647762248, guid: 8cf7ba3abba451749ad969d13fd24c9e, type: 2}
+  - {fileID: 1740800681286676, guid: 83980cb294e6a0f40bc26961a53cf3b2, type: 2}
+  - {fileID: 1093356430153226, guid: 563e967eda822b74b92d921e3eea3f2d, type: 2}
+  - {fileID: 1063456547950864, guid: 68b11597b3b1eb44e958661ac31c19dd, type: 2}
+  - {fileID: 1983442978038034, guid: 8257588f20ea47f46b87814cde2823ed, type: 2}
+  - {fileID: 1986310934949344, guid: af28f96baac430c4bad027676c93b482, type: 2}
+  - {fileID: 1300273425014772, guid: 59e14a33cf48a3a41ac6207df2a5b16b, type: 2}
+  - {fileID: 1552962488859868, guid: 174516fd9ac98944b8d63a890f4df4c1, type: 2}
+  - {fileID: 1755094276162318, guid: e6b62c230e81cf948be142adf652f8ec, type: 2}
+  - {fileID: 1818891158778486, guid: 5f973b8e72c16004296817253c448a0b, type: 2}
+  - {fileID: 1494722760133718, guid: d2147e9837f815246908f0c021a59284, type: 2}
+  - {fileID: 1918272858959058, guid: 6a2581281d463824a9daa1f25ae1ca7f, type: 2}
+  - {fileID: 1286836171050946, guid: 008e3e46e52df0a42b6bce19ecae153e, type: 2}
+  - {fileID: 1282143594146280, guid: 74acdf3aea03ef340b7706f63c477b4b, type: 2}
+  - {fileID: 1388234937866032, guid: 6db95f0a2d63dc142ad577030880f170, type: 2}
+  - {fileID: 1419458519891148, guid: 22e7b24e50a97a24aa63bea11992a6ee, type: 2}
+  - {fileID: 1607465718862148, guid: 4b2d066ad106aca4684f66304be7f4ca, type: 2}
+  - {fileID: 1846748770141970, guid: 391ba6b2a9d669443a1d28016f8e6fea, type: 2}
+  - {fileID: 1584353760535916, guid: 90f4c15297ce0004bb7958b03d8a7e18, type: 2}
+  - {fileID: 1334385299498216, guid: c00104f791105ec4aa05256b676460ab, type: 2}
+  - {fileID: 1135885804157352, guid: 52bdf6fc597625f458acadfa0eebee17, type: 2}
+  - {fileID: 1308486932818588, guid: b53f403cfdae829489e1100baee2e006, type: 2}
+  - {fileID: 1060078850257274, guid: 5a221d20eb6b85c40a255fc6a6e1f191, type: 2}
+  - {fileID: 1555042708463446, guid: 1f0563d270c4ccf4d9716ac3629a1243, type: 2}
+  - {fileID: 1594707100331198, guid: 5282a41f7199d4b488411e92b22e8fbd, type: 2}
+  - {fileID: 1879019257529866, guid: becd3da2524b7ed49bcee19f09d81449, type: 2}
 --- !u!114 &114173456738148596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,8 +198,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1975071989
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 63b0f49176f5e6a4bb04c84cc082db6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

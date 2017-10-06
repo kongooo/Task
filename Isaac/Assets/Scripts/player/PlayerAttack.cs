@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public float fireRate;   //子弹发射频率
-    public float bulletSpeed,zspeed;   //子弹速度
+    public float bulletSpeed,zforce;   //子弹速度
+    public float force;
 
     public Animator attack_animator;
 
@@ -14,6 +15,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform left,right;
     public GameObject teer;
     private bool isleft=true;
+    private GameObject Teer;
 
     private static PlayerAttack _instance;
     public static PlayerAttack Instance { get { return _instance; } }
@@ -52,12 +54,20 @@ public class PlayerAttack : MonoBehaviour
     {
         if (restTime > 1 / fireRate)
         {           
-            GameObject Teer = GameObject.Instantiate(teer, bulletTrans.position, Quaternion.identity);          
-            Teer.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;   
+            Teer = GameObject.Instantiate(teer, bulletTrans.position, Quaternion.identity);          
+            Teer.GetComponent<Rigidbody>().AddForce(direction*force);
+            Teer.GetComponent<Rigidbody>().AddForce(0,0,zforce);
+            teer.GetComponent<Rigidbody>().velocity +=
+                transform.InverseTransformDirection(GetComponent<Rigidbody>().velocity);
             if(direction.x!=0)
-            Teer.GetComponent<Rigidbody>().velocity+=new Vector3(0,1,zspeed);           
+            Invoke("drop",0.3f);
             restTime = 0;
         }
+    }
+
+    private void drop()
+    {
+        Teer.GetComponent<Rigidbody>().AddForce(0, -60f, 0);
     }
     //左右按次序发射子弹
     private void firePause(Vector3 dir)

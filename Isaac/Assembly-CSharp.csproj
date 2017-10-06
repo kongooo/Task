@@ -53,6 +53,8 @@
   <ItemGroup>
      <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
      <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
+     <Compile Include="Assets\end.cs" />
+     <Compile Include="Assets\RandomProp.cs" />
      <Compile Include="Assets\Scripts\bullet\BaseBu.cs" />
      <Compile Include="Assets\Scripts\bullet\BossBullet.cs" />
      <Compile Include="Assets\Scripts\bullet\BulletControl.cs" />
@@ -65,6 +67,7 @@
      <Compile Include="Assets\Scripts\Enemy\headControl.cs" />
      <Compile Include="Assets\Scripts\Enemy\LegEnemy.cs" />
      <Compile Include="Assets\Scripts\ManageGame.cs" />
+     <Compile Include="Assets\Scripts\MinMap.cs" />
      <Compile Include="Assets\Scripts\Obstacle\fireControl.cs" />
      <Compile Include="Assets\Scripts\Obstacle\shitControl.cs" />
      <Compile Include="Assets\Scripts\path\GRID.cs" />
@@ -74,6 +77,8 @@
      <Compile Include="Assets\Scripts\player\PlayerMove.cs" />
      <Compile Include="Assets\Scripts\room\ManageDoor.cs" />
      <Compile Include="Assets\Scripts\room\RoomManage.cs" />
+     <Compile Include="Assets\Scripts\UI\GameOver.cs" />
+     <Compile Include="Assets\Scripts\UI\StartUI.cs" />
      <None Include="Assets\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
      <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />

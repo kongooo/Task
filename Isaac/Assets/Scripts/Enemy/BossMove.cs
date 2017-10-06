@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class BossMove : MonoBehaviour
@@ -11,6 +12,9 @@ public class BossMove : MonoBehaviour
 
     private Transform playerTrans;
     public GameObject bullet;
+    public Slider BossSlider;
+    public Image HeartImage, SliderImage,sliderBack;
+    public int HPMax;
 
     private Rigidbody rigidbody;
     private Animator animator;
@@ -27,8 +31,11 @@ public class BossMove : MonoBehaviour
 
 	void Start ()
 	{
-	    bossmove = true;
-	    countTime = 1;
+	    countTime = 0.8f;
+        SetColor(HeartImage,0);
+        SetColor(SliderImage,0);
+        SetColor(sliderBack,0);
+	    bossmove = true;	    
 	    _instance = this;
 	    playerTrans = GameObject.FindGameObjectWithTag("player").transform;
         dir = playerTrans.position - transform.position;
@@ -38,10 +45,14 @@ public class BossMove : MonoBehaviour
 		
 	void Update ()
 	{
-	    if (countTime <= 0)
+	    BossSlider.value = (float)GetComponent<EnemyBase>().Hp / HPMax;
+        if (countTime <= 0)
 	    {
 	        if (bossmove)
 	        {
+	            SetColor(HeartImage,1);
+	            SetColor(SliderImage,1);
+                SetColor(sliderBack,1);
 	            Debug.Log("move");
 	            StartCoroutine("move");
 	            bossmove = false;
@@ -57,6 +68,12 @@ public class BossMove : MonoBehaviour
 	    i += Time.deltaTime;
 	}
 
+    private void SetColor(Image image,int change)
+    {
+        Color color = image.color;
+        color.a = change;
+        image.color = color;
+    }
     IEnumerator move( )
     {       
         animator.SetFloat("ready", dir.x);
@@ -83,7 +100,6 @@ public class BossMove : MonoBehaviour
         rigidbody.AddForce(Vector3.zero);
         yield return new WaitForSeconds(0.5f);
         animator.SetFloat("land", 0);
-
         if (saw1 >= 2)
         {
             saw1 = 0;
@@ -98,18 +114,17 @@ public class BossMove : MonoBehaviour
         else
         {
             yield return move();            
-        }
-        
+        }       
     }
 
     IEnumerator Attack()
     {
         animator.SetFloat("attack", dir.x);
         yield return new WaitForSeconds(1.5f);
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 20; i++)
         {
             if (dir.x > 0)
-            GameObject.Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<BossBullet>().BossBuMove(1,8,true);
+            GameObject.Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<BossBullet>().BossBuMove(1,9,true);
             else if(dir.x < 0)            
             GameObject.Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<BossBullet>().BossBuMove(-9,-1,true);           
         }
@@ -143,7 +158,6 @@ public class BossMove : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.collider.name);
         if (isfly)
         {
             if (collision.gameObject)
@@ -153,12 +167,11 @@ public class BossMove : MonoBehaviour
                 animator.SetFloat("fly", 0);
                 animator.SetFloat("attack2", -1);
                 rigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
-                for (int i=0;i<20;i++)
+                for (int i=0;i<30;i++)
                 GameObject.Instantiate(bullet, transform.position, Quaternion.identity).GetComponent<BossBullet>().BossBuMove(-9,8,false);                 
                 rigidbody.velocity = Vector3.zero;
                 rigidbody.isKinematic = true;                
             }
         }
-
     }
 }

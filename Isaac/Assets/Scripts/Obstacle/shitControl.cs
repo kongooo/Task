@@ -25,7 +25,7 @@ public class shitControl : MonoBehaviour
                 spriterender.sprite = sprites[count];
                 count--;
                 if (count == -1)
-                    GetComponent<SphereCollider>().enabled = false;
+                    GetComponent<BoxCollider>().enabled = false;
             }           
 
         }

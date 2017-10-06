@@ -114,8 +114,9 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
-700cca3e1c672aaa0d6fa1eac45630aa Assembly-CSharp.dll:.BasePlayer
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ManageGame
+504b183b89bb80df47beba9d4d3b2f31 Assembly-CSharp.dll:.BasePlayer
+f524dbcd7076792f3c6c126be3d7827d Assembly-CSharp.dll:.ManageGame
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.StartUI
 58a76f380f023356fe9da786f0ac54c6 Assembly-CSharp.dll:.FlyMove
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -134,11 +135,11 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.RedBullet
 df98a608af983c04c8aa5672afc284db Assembly-CSharp.dll:.headControl
 5a35d5b94055acf66f01869f65b7d8a6 Assembly-CSharp.dll:.Basics
-cebd13ccb3d8911f554324296ab34bea Assembly-CSharp.dll:.PlayerAttack
+c5f50c66e8d8ee412f08e38893f7e6e0 Assembly-CSharp.dll:.PlayerAttack
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 5f2ad81aa8994e8fbe25d1e57afe6773 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
-df5f9d6a08bde609893595c44cdb1b1e Assembly-CSharp.dll:.BossMove
+e300d043fa26e59e75b0304f8868c3bc Assembly-CSharp.dll:.BossMove
 2be0b614a1d8332cf7b3099bc7881302 Assembly-CSharp.dll:.PlayerMove
 f266a453cd4bfbe81533762a3e3589f4 DOTween.dll:DG.Tweening.Core.DOTweenComponent
 0869883b6445f616fc171fe47d5fa3a0 DOTween.dll:DG.Tweening.Core.DOTweenSettings
@@ -149,8 +150,9 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 bddbf2d2fcf4c3e2a399f7d5582ebf94 Assembly-CSharp.dll:.LegEnemy
-c0c3cc0179d4751003bc9ece71fc198a Assembly-CSharp.dll:.EnemyBase
+721b602e49220398101a284b337d8ddc Assembly-CSharp.dll:.EnemyBase
 fc8a611547032d43b5ffb4578f1d3df6 Assembly-CSharp.dll:.RoomManage
 192b67397f6451f38ce99105a4507919 Assembly-CSharp.dll:.BaseBu
 7de429fd231b7c107cd7c9153b821faa Assembly-CSharp.dll:.shitControl
-385a0feaf129d880087dfd76a4db9ef4 Assembly-CSharp.dll:.GRID
+4bb706a0ac92cb043ce337721f19c463 Assembly-CSharp.dll:.GRID
+0682c67e0b76d3fd2812a84e6274e570 Assembly-CSharp.dll:.RandomProp

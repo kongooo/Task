@@ -9,7 +9,7 @@ public class Enemy2Attack : MonoBehaviour
     private GameObject player;
     private Vector3 playerPos;
 
-    private float j=0.5f;
+    private float j=1f;
 
 	void Awake () {
 		player=GameObject.FindGameObjectWithTag("player");
@@ -18,7 +18,7 @@ public class Enemy2Attack : MonoBehaviour
 	
 	void Update ()
     { 
-        if (j >= 0.5f)
+        if (j >= 1f)
 	    {
 	        j = 0;
 	        playerPos = player.GetComponent<Transform>().position;

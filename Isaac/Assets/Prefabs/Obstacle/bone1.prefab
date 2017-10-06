@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4227185797532714}
   - component: {fileID: 212614171084283778}
-  - component: {fileID: 136733717561217716}
   - component: {fileID: 54083364800393570}
+  - component: {fileID: 65613971172704638}
   m_Layer: 8
   m_Name: bone1
-  m_TagString: Untagged
+  m_TagString: OB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1795565625048500}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -57,19 +57,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!136 &136733717561217716
-CapsuleCollider:
+--- !u!65 &65613971172704638
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1795565625048500}
-  m_Material: {fileID: 13400000, guid: 9ff5afd8a902d5f4f9a44587b8e03425, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.115
-  m_Height: 0.24
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.23, y: 0.24, z: 1.8170798}
+  m_Center: {x: 0, y: 0, z: -0.80853987}
 --- !u!212 &212614171084283778
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,7 +99,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975071989
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300018, guid: 9a405c13feb790f438faa77a6266efab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65374659020631652}
   m_Layer: 8
   m_Name: rock2
-  m_TagString: Untagged
+  m_TagString: OB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1820614411467658}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -67,8 +67,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25000003, y: 0.26999998, z: 0.34512115}
-  m_Center: {x: 0, y: 0, z: -0.0017751252}
+  m_Size: {x: 0.25000003, y: 0.26999998, z: 1.1724213}
+  m_Center: {x: 0, y: 0, z: -0.36403212}
 --- !u!212 &212341428952697616
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -99,7 +99,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2053925669
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9a405c13feb790f438faa77a6266efab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

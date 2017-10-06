@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class BossBullet : MonoBehaviour
 {
+    void Update()
+    {
+        if(Vector2.Distance(transform.position,GameObject.Find("boss").transform.position)>10)
+            Destroy(gameObject);
+    }
 
     public void BossBuMove(int m,int n,bool isAttack)
     {
@@ -19,7 +25,7 @@ public class BossBullet : MonoBehaviour
         }
         x = x + x1 / 10;
         y = y + y1 / 10;
-        GetComponent<Rigidbody>().velocity = new Vector3(x, y, (8 - Mathf.Abs(y)) * 0.05f);
+        GetComponent<Rigidbody>().AddForce(new Vector3(x*2.5f, y*2.5f, -(8 - Mathf.Abs(y)) * 2.5f));
     }
 
     void OnTriggerEnter(Collider col)

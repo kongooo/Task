@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4309954158194560}
   - component: {fileID: 212834757758044464}
-  - component: {fileID: 136512831249208978}
   - component: {fileID: 54914184451259300}
+  - component: {fileID: 65114924676292496}
   m_Layer: 8
   m_Name: bone3
-  m_TagString: Untagged
+  m_TagString: OB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299301461308152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.44, y: 0.76, z: 0}
+  m_LocalPosition: {x: 6.0749397, y: 4.621856, z: 0.365}
   m_LocalScale: {x: 2.6203127, y: 3.4511726, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -49,7 +49,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299301461308152}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -57,19 +57,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!136 &136512831249208978
-CapsuleCollider:
+--- !u!65 &65114924676292496
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299301461308152}
-  m_Material: {fileID: 13400000, guid: 9ff5afd8a902d5f4f9a44587b8e03425, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.115
-  m_Height: 0.24
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.23999998, z: 2.0678833}
+  m_Center: {x: 0, y: 0, z: -0.9339416}
 --- !u!212 &212834757758044464
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -100,7 +99,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975071989
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300036, guid: 9a405c13feb790f438faa77a6266efab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -47,7 +47,7 @@ public class GRID : MonoBehaviour {
     //在Hierarchy中管理生成路标的物体
     private GameObject Path;
 
-    private List<GameObject> PathObject = new List<GameObject>();
+    public List<GameObject> PathObject = new List<GameObject>();
 
     void Start()
     {
@@ -141,29 +141,45 @@ public class GRID : MonoBehaviour {
 
     public void chase(GameObject AI, List<GameObject> paths, int length)
     {
+        bool ischase=true;
         Vector3[] pathpos = new Vector3[paths.Count];
-        int currentpoint = 0;
-        for (int i = 0; i < length; i++)
+        for (int j = 0; j < paths.Count; j++)
         {
-            pathpos[i] = paths[i].transform.position;
+            if (paths[j].activeSelf)
+                ischase = false;
         }
-        Vector3 AIpos = AI.GetComponent<Transform>().position;
-        if (AIpos != pathpos[currentpoint])
+        if (ischase)
         {
-            AI.GetComponent<Rigidbody>().MovePosition(Vector2.Lerp(AIpos, pathpos[currentpoint],speed*Time.deltaTime));
+            AI.GetComponent<Rigidbody>().MovePosition(Vector2.Lerp(transform.position, GameObject.FindGameObjectWithTag("player").transform.position, speed * Time.deltaTime));
+            Debug.Log("walk");
         }
+            
         else
-            currentpoint = (currentpoint + 1) % pathpos.Length;
-
-        if (gameObject.name!="fly"&&gameObject.name!="spider")
         {
-            //动画判断
-            Vector3 dir = pathpos[currentpoint] - AIpos;
+            int currentpoint = 0;
+            for (int i = 0; i < length; i++)
+            {
+                pathpos[i] = paths[i].transform.position;
+            }
+            Vector3 AIpos = AI.GetComponent<Transform>().position;
+            if (AIpos != pathpos[currentpoint])
+            {
+                AI.GetComponent<Rigidbody>().MovePosition(Vector2.Lerp(AIpos, pathpos[currentpoint], speed * Time.deltaTime));
+            }
+            else
+                currentpoint = (currentpoint + 1) % pathpos.Length;
 
-            AI.GetComponent<Animator>().SetFloat("lf", dir.x);
+            if (gameObject.name != "fly" && gameObject.name != "spider")
+            {
+                //动画判断
+                Vector3 dir = pathpos[currentpoint] - AIpos;
 
-            AI.GetComponent<Animator>().SetFloat("ud", dir.y);
+                AI.GetComponent<Animator>().SetFloat("lf", dir.x);
+
+                AI.GetComponent<Animator>().SetFloat("ud", dir.y);
+            }
         }
+        
         
     }
 }

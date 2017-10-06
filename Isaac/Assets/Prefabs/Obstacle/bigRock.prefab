@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54338287879691868}
   m_Layer: 8
   m_Name: bigRock
-  m_TagString: Untagged
+  m_TagString: OB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1251044852608624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.83, y: 3.81, z: 0}
+  m_LocalPosition: {x: 12.105952, y: 5.731165, z: 0}
   m_LocalScale: {x: 3.6625, y: 3.2292435, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -49,7 +49,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1251044852608624}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -67,8 +67,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.56075776, y: 0.5509814, z: 0.98607785}
-  m_Center: {x: -0.005754725, y: 0.010279854, z: -0.04437527}
+  m_Size: {x: 0.5767612, y: 0.5509814, z: 2.1742435}
+  m_Center: {x: 0.0022467657, y: 0.010279854, z: -0.63845813}
 --- !u!212 &212524779945507406
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -99,7 +99,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975071989
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300036, guid: 61d6c728be58a10488150ede8c065c1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

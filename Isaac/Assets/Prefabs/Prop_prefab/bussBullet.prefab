@@ -53,7 +53,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1382999873807824}
   serializedVersion: 2
-  m_Mass: 0.0000001
+  m_Mass: 0.05
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -154,7 +154,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1975071989
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300050, guid: 5338b1f44ceb7c344b955e05912f0e9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

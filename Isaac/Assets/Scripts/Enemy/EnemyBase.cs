@@ -7,9 +7,11 @@ public class EnemyBase : MonoBehaviour
     private Renderer renderer;
     public int Hp,playerDamage;
     public float deathTime;
-    private bool isdeath;
+    public GameObject[] DeathSpecial;
+    private bool isdeath,isspecial=false;
     private GameObject player;
-    
+    private int specilaNumber;
+
     void Start()
     {
         renderer = GetComponent<Renderer>();
@@ -23,12 +25,12 @@ public class EnemyBase : MonoBehaviour
         if (Hp == 0)
             isdeath = true;
         death();
-        if(gameObject.name!="boss")
-        if(RoomManage.Instance.islast)
-            transform.localPosition=new Vector3(
-                Mathf.Clamp(transform.localPosition.x,-1.7f,1.7f),
-                Mathf.Clamp(transform.localPosition.y,-0.9f,0.9f),
-                transform.localPosition.z);
+        if (gameObject.name != "boss")
+            if (RoomManage.Instance.islast)
+                transform.localPosition = new Vector3(
+                    Mathf.Clamp(transform.localPosition.x, -1.7f, 1.7f),
+                    Mathf.Clamp(transform.localPosition.y, -0.9f, 0.9f),
+                    transform.localPosition.z);
     }
     public void EnemyDamage(int damage)
     {
@@ -42,14 +44,21 @@ public class EnemyBase : MonoBehaviour
     {
         if (isdeath)
         {
-            GetComponent<Animator>().SetBool("isdeath", true);
+            GetComponent<Animator>().SetBool("isdeath", true);           
             Invoke("destroy", deathTime);
         }
     }
 
     private void destroy()
     {
-        Destroy(gameObject);
+        if (GetComponent<GRID>())
+        {
+            for(int i=0;i<GetComponent<GRID>().PathObject.Count;i++)
+                Destroy(GetComponent<GRID>().PathObject[i]);
+        }
+        specilaNumber = Random.Range(0, 32);
+        Instantiate(DeathSpecial[specilaNumber], transform.position, Quaternion.identity);
+        Destroy(gameObject);       
     }
 
     void OnCollisionEnter(Collision col)
